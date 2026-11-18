@@ -1,0 +1,2555 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REX DESIGN — Você sonha, nós criamos! | Loja Virtual de Design Gráfico</title>
+  <meta name="description" content="Na REX DESIGN, transformamos suas ideias em projetos visuais criativos, modernos e personalizados. Serviços gráficos a partir de R$ 15,00." />
+
+  <!-- Google Fonts: Cinzel (Luxo), Plus Jakarta Sans (Leitura Moderna) & JetBrains Mono (Preços/Dados) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            rex: {
+              black: '#080808',
+              graphite: '#191919',
+              surface: '#121212',
+              red: '#FF2020',
+              orange: '#FF6A00',
+              gold: '#FFC400',
+            }
+          },
+          fontFamily: {
+            luxury: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'neon-red': '0 0 25px rgba(255, 32, 32, 0.35)',
+            'neon-orange': '0 0 25px rgba(255, 106, 0, 0.35)',
+            'neon-dual': '0 10px 35px -5px rgba(255, 32, 32, 0.35), 0 0 20px rgba(255, 106, 0, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-deep: #080808;
+      --bg-graphite: #191919;
+      --accent-red: #FF2020;
+      --accent-orange: #FF6A00;
+      --accent-gold: #FFC400;
+    }
+
+    body {
+      background-color: #080808;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(255, 32, 32, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(255, 106, 0, 0.07) 0%, transparent 45%),
+        linear-gradient(180deg, rgba(25, 25, 25, 0.25) 0%, rgba(8, 8, 8, 1) 100%);
+    }
+
+    /* Textura sutil industrial / fibra de carbono */
+    .carbon-bg {
+      background-color: #0d0d0d;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.015) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.015) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.015) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.015) 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+
+    /* Bordas luminosas metálicas e neon */
+    .neon-border-card {
+      position: relative;
+      background: linear-gradient(145deg, #161616, #0d0d0d);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .neon-border-card:hover {
+      border-color: rgba(255, 106, 0, 0.55);
+      box-shadow: 0 12px 35px -8px rgba(255, 32, 32, 0.28), 0 0 18px rgba(255, 106, 0, 0.18);
+      transform: translateY(-4px);
+    }
+
+    /* Botão Luxo Neon Vermelho/Laranja */
+    .btn-rex-primary {
+      background: linear-gradient(135deg, #FF2020 0%, #FF6A00 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 20px rgba(255, 32, 32, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn-rex-primary:hover {
+      filter: brightness(1.12);
+      box-shadow: 0 6px 28px rgba(255, 106, 0, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .btn-rex-outline {
+      background: rgba(25, 25, 25, 0.75);
+      border: 1px solid rgba(255, 106, 0, 0.5);
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+    }
+    .btn-rex-outline:hover {
+      background: rgba(255, 106, 0, 0.14);
+      border-color: #FF6A00;
+      box-shadow: 0 0 20px rgba(255, 106, 0, 0.25);
+    }
+
+    /* Texto Gradiente Metálico & Fogo */
+    .text-gradient-rex {
+      background: linear-gradient(90deg, #FFFFFF 0%, #FFC400 45%, #FF6A00 75%, #FF2020 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Scrollbar customizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080808;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2b2b2b;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF6A00;
+    }
+
+    /* Pulso do botão WhatsApp */
+    @keyframes pulse-whatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-pulse {
+      animation: pulse-whatsapp 2.2s infinite;
+    }
+
+    /* Acordeão suave */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      color: #FF6A00;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-rex-red selection:text-white">
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast-container" class="fixed top-24 right-4 z-[90] flex flex-col gap-3 pointer-events-none max-w-sm w-full"></div>
+
+  <!-- ==================== NAVBAR FIXA ==================== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#080808]/90 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logomarca REX DESIGN (Emblema 3D Industrial + Neon fiel à arte enviada) -->
+        <a href="#inicio" onclick="navigateToHome()" class="flex items-center gap-3 group focus:outline-none">
+          <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[#232323] via-[#111111] to-[#080808] border border-rex-orange/60 shadow-neon-dual flex flex-col items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform">
+            <!-- Brilho interno industrial -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,32,32,0.35),transparent_60%)]"></div>
+            <div class="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-rex-red via-rex-orange to-rex-gold"></div>
+            <!-- Tipografia 3D REX DESIGN -->
+            <span class="relative font-luxury font-black text-base sm:text-lg tracking-wider text-white drop-shadow-[0_2px_4px_rgba(255,32,32,0.8)] leading-none">REX</span>
+            <span class="relative font-mono font-bold text-[8px] sm:text-[9px] tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rex-red to-rex-gold mt-0.5">DESIGN</span>
+            <span class="relative italic font-serif text-[7px] text-white/75 -mt-0.5">Rex Owen</span>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+              <span class="font-luxury font-extrabold text-lg sm:text-xl tracking-wider text-white">REX <span class="text-rex-orange">DESIGN</span></span>
+              <span class="hidden md:inline-block text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-rex-red/20 border border-rex-red/40 text-rex-gold">Studio 4K</span>
+            </div>
+            <span class="text-[11px] sm:text-xs text-gray-400 tracking-wide">Você sonha, nós criamos!</span>
+          </div>
+        </a>
+
+        <!-- Links de Navegação Desktop -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
+          <a href="#inicio" onclick="navigateToHome()" class="hover:text-rex-orange transition-colors">Início</a>
+          <a href="#catalogo" onclick="navigateToHome('catalogo')" class="hover:text-rex-orange transition-colors">Catálogo (31)</a>
+          <a href="#galeria" onclick="navigateToHome('galeria')" class="hover:text-rex-orange transition-colors">Portfólio</a>
+          <a href="#prazos-horarios" onclick="navigateToHome('prazos-horarios')" class="hover:text-rex-orange transition-colors">Prazos & Horários</a>
+          <a href="#faq" onclick="navigateToHome('faq')" class="hover:text-rex-orange transition-colors">FAQ</a>
+          <a href="#avaliacoes" onclick="navigateToHome('avaliacoes')" class="hover:text-rex-orange transition-colors">Avaliações</a>
+        </nav>
+
+        <!-- Ações Direita: Carrinho + Menu Mobile -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button onclick="openCartDrawer()" class="relative flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-rex-graphite hover:bg-[#242424] border border-rex-orange/40 text-white text-sm font-semibold transition-all shadow-md">
+            <i class="fa-solid fa-bag-shopping text-rex-orange"></i>
+            <span class="hidden sm:inline">Meu Pedido</span>
+            <span id="cart-badge" class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 text-xs font-mono font-bold rounded-full bg-gradient-to-r from-rex-red to-rex-orange text-white">0</span>
+          </button>
+
+          <button onclick="toggleMobileMenu()" aria-label="Abrir Menu" class="lg:hidden p-2.5 rounded-xl bg-rex-graphite border border-white/10 text-gray-200 hover:text-rex-orange">
+            <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Mobile Expansível -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0e0e0e] border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
+      <a href="#inicio" onclick="toggleMobileMenu(); navigateToHome()" class="block px-3 py-2.5 rounded-lg text-gray-200 hover:bg-rex-graphite hover:text-rex-orange font-medium">Página Inicial</a>
+      <a href="#catalogo" onclick="toggleMobileMenu(); navigateToHome('catalogo')" class="block px-3 py-2.5 rounded-lg text-gray-200 hover:bg-rex-graphite hover:text-rex-orange font-medium">Catálogo de Serviços</a>
+      <a href="#galeria" onclick="toggleMobileMenu(); navigateToHome('galeria')" class="block px-3 py-2.5 rounded-lg text-gray-200 hover:bg-rex-graphite hover:text-rex-orange font-medium">Trabalhos Demonstrativos</a>
+      <a href="#prazos-horarios" onclick="toggleMobileMenu(); navigateToHome('prazos-horarios')" class="block px-3 py-2.5 rounded-lg text-gray-200 hover:bg-rex-graphite hover:text-rex-orange font-medium">Prazo e Horário</a>
+      <a href="#faq" onclick="toggleMobileMenu(); navigateToHome('faq')" class="block px-3 py-2.5 rounded-lg text-gray-200 hover:bg-rex-graphite hover:text-rex-orange font-medium">Perguntas Frequentes</a>
+      <a href="#avaliacoes" onclick="toggleMobileMenu(); navigateToHome('avaliacoes')" class="block px-3 py-2.5 rounded-lg text-gray-200 hover:bg-rex-graphite hover:text-rex-orange font-medium">Opinião dos Clientes</a>
+      <div class="pt-2 border-t border-white/10 flex gap-2">
+        <a href="https://wa.me/5521966632766" target="_blank" rel="noopener" class="flex-1 text-center py-2.5 rounded-xl btn-rex-primary text-xs uppercase">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL (SPA) ==================== -->
+  <main id="main-store-view" class="pt-20">
+
+    <!-- 1. HERO / PÁGINA INICIAL — BOAS-VINDAS -->
+    <section id="inicio" class="relative overflow-hidden py-14 sm:py-20 lg:py-28 border-b border-white/10">
+      <!-- Efeitos luminosos de fundo -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-rex-red/20 rounded-full blur-[130px] pointer-events-none"></div>
+      <div class="absolute top-1/2 -right-32 w-96 h-96 bg-rex-orange/15 rounded-full blur-[130px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Coluna de Texto Principal -->
+          <div class="lg:col-span-7 space-y-6">
+            <!-- Selo Destaque Preço Inicial -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-rex-graphite/90 border border-rex-gold/40 shadow-neon-orange">
+              <span class="w-2.5 h-2.5 rounded-full bg-rex-gold animate-ping"></span>
+              <span class="font-mono text-xs sm:text-sm font-bold tracking-wider text-rex-gold uppercase">
+                Serviços profissionais a partir de R$ 15,00
+              </span>
+            </div>
+
+            <h1 class="font-luxury font-black text-3xl sm:text-5xl lg:text-[3.35rem] leading-[1.12] tracking-tight text-white">
+              TRANSFORME SUAS IDEIAS EM <span class="text-gradient-rex">ARTES PROFISSIONAIS!</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-200 font-medium leading-relaxed">
+              Na <strong class="text-white">REX DESIGN</strong>, transformamos suas ideias em projetos visuais criativos, modernos e personalizados. Desenvolvemos soluções gráficas para destacar sua marca, valorizar seus produtos e fortalecer sua presença nas redes sociais.
+            </p>
+
+            <!-- Texto de apresentação institucional -->
+            <div class="p-5 rounded-2xl bg-[#111111]/90 border-l-4 border-rex-orange text-sm sm:text-base text-gray-300 space-y-3 leading-relaxed shadow-xl">
+              <p>Uma boa apresentação visual faz diferença na maneira como as pessoas enxergam uma empresa, um produto ou um projeto.</p>
+              <p>Uma arte bem elaborada transmite profissionalismo, ajuda a comunicar sua mensagem, chama a atenção do público e torna sua marca mais reconhecível.</p>
+              <p class="text-white font-medium">Seja para divulgar um negócio, apresentar um produto, lançar uma música, criar uma identidade visual ou desenvolver um projeto pessoal, a <span class="text-rex-orange font-bold">REX DESIGN</span> está pronta para transformar suas ideias em realidade.</p>
+            </div>
+
+            <!-- Botões de Ação Principais -->
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3.5 pt-2">
+              <a href="#catalogo" class="btn-rex-primary px-7 py-4 rounded-xl text-sm uppercase tracking-wider flex items-center justify-center gap-2.5">
+                <i class="fa-solid fa-layer-group"></i>
+                VER CATÁLOGO
+              </a>
+              <button onclick="openCartDrawer()" class="btn-rex-outline px-7 py-4 rounded-xl text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5">
+                <i class="fa-solid fa-file-signature text-rex-gold"></i>
+                SOLICITAR ORÇAMENTO
+              </button>
+              <a href="https://wa.me/5521966632766?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20REX%20DESIGN%20e%20gostaria%20de%20falar%20com%20um%20atendente." target="_blank" rel="noopener" class="px-6 py-4 rounded-xl bg-[#151515] hover:bg-[#1f1f1f] border border-emerald-500/40 text-emerald-400 hover:text-emerald-300 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                FALAR COM ATENDENTE
+              </a>
+            </div>
+          </div>
+
+          <!-- Coluna Visual Studio / Showcase 3D -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl p-1.5 bg-gradient-to-br from-rex-red via-rex-orange to-rex-gold/40 shadow-neon-dual">
+              <div class="relative rounded-[22px] bg-[#0b0b0b] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=85" alt="Estúdio de Design Gráfico REX DESIGN" class="w-full h-[360px] sm:h-[430px] object-cover opacity-85 hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x600/191919/FF6A00?text=REX+DESIGN+STUDIO'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent"></div>
+                
+                <!-- Card flutuante de métricas e identidade -->
+                <div class="absolute bottom-5 inset-x-5 p-5 rounded-2xl bg-[#121212]/90 backdrop-blur-md border border-white/15">
+                  <div class="flex items-center justify-between gap-4 mb-3">
+                    <div>
+                      <span class="text-[11px] font-mono uppercase tracking-widest text-rex-orange">Estúdio Criativo Oficial</span>
+                      <h2 class="font-luxury font-bold text-xl text-white">REX DESIGN</h2>
+                    </div>
+                    <span class="px-3 py-1 rounded-lg bg-rex-red/20 border border-rex-red text-rex-red font-mono text-xs font-bold">
+                      ATÉ 48H
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-300 leading-relaxed">
+                    31 soluções especializadas em Publicidade Digital, Identidade Visual, Música, YouTube e Materiais Corporativos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VANTAGENS DE CONTRATAR A REX DESIGN -->
+        <div class="mt-16 pt-12 border-t border-white/10">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-mono uppercase tracking-[0.25em] text-rex-orange">Excelência em cada pixel</span>
+            <h2 class="font-luxury font-bold text-2xl sm:text-3xl text-white mt-2">POR QUE ESCOLHER A REX DESIGN?</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="neon-border-card rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rex-red/20 to-rex-orange/20 border border-rex-orange/40 flex items-center justify-center text-rex-orange text-xl mb-4">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Entrega Ágil em até 48h</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">Processo organizado e ágil para entregar seu projeto dentro do prazo padrão de até 48 horas.</p>
+            </div>
+
+            <div class="neon-border-card rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rex-red/20 to-rex-orange/20 border border-rex-orange/40 flex items-center justify-center text-rex-gold text-xl mb-4">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Visual Exclusivo e de Luxo</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">Artes criadas sob medida para destacar sua marca com estética moderna e alto impacto visual.</p>
+            </div>
+
+            <div class="neon-border-card rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rex-red/20 to-rex-orange/20 border border-rex-orange/40 flex items-center justify-center text-emerald-400 text-xl mb-4">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Atendimento Direto</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">Comunicação rápida e transparente diretamente pelo WhatsApp para alinhar cada detalhe da arte.</p>
+            </div>
+
+            <div class="neon-border-card rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rex-red/20 to-rex-orange/20 border border-rex-orange/40 flex items-center justify-center text-rex-red text-xl mb-4">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Ajustes Inclusos</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">Até duas rodadas de ajustes simples inclusas para garantir que o resultado fique fiel ao seu objetivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERVIÇOS MAIS PROCURADOS -->
+    <section class="py-14 carbon-bg border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-[0.25em] text-rex-gold">Destaques da Loja</span>
+            <h2 class="font-luxury font-bold text-2xl sm:text-3xl text-white mt-1">SERVIÇOS MAIS PROCURADOS</h2>
+          </div>
+          <a href="#catalogo" class="text-sm font-semibold text-rex-orange hover:text-rex-gold flex items-center gap-2">
+            Explorar todos os 31 serviços <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div id="featured-services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Renderizado dinamicamente via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. GALERIA DE TRABALHOS DEMONSTRATIVOS (MOCKUPS 4K) -->
+    <section id="galeria" class="py-16 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-mono uppercase tracking-[0.25em] text-rex-red">Vitrine Visual 4K</span>
+          <h2 class="font-luxury font-bold text-2xl sm:text-4xl text-white mt-2">GALERIA DE TRABALHOS DEMONSTRATIVOS</h2>
+          <p class="text-sm sm:text-base text-gray-400 mt-3">
+            Apresentações em mockups realistas de alta definição demonstrando o padrão estético aplicado em identidades visuais, publicidade, música e materiais digitais.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Mockup 1 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-rex-graphite aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=900&q=85" alt="Mockup Identidade Visual Completa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/800x600/191919/FF2020?text=Identidade+Visual'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-transparent opacity-90"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-mono uppercase px-2.5 py-1 rounded bg-rex-red/80 text-white">Identidade Visual</span>
+              <h3 class="font-bold text-lg text-white mt-2">Branding & Papelaria Corporativa</h3>
+              <p class="text-xs text-gray-300 mt-0.5">Aplicação realista de marca, tipografia e paleta institucional.</p>
+            </div>
+          </div>
+
+          <!-- Mockup 2 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-rex-graphite aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=900&q=85" alt="Mockup Social Media e Flyers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/800x600/191919/FF6A00?text=Social+Media+Design'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-transparent opacity-90"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-mono uppercase px-2.5 py-1 rounded bg-rex-orange/80 text-white">Publicidade Digital</span>
+              <h3 class="font-bold text-lg text-white mt-2">Campanhas para Redes Sociais</h3>
+              <p class="text-xs text-gray-300 mt-0.5">Flyers promocionais, posts e stories de alta conversão.</p>
+            </div>
+          </div>
+
+          <!-- Mockup 3 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-rex-graphite aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=900&q=85" alt="Mockup Capa Musical e Álbum" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/800x600/191919/FFC400?text=Capa+Musical+4K'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-transparent opacity-90"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-mono uppercase px-2.5 py-1 rounded bg-rex-gold/90 text-black font-bold">Música & Entretenimento</span>
+              <h3 class="font-bold text-lg text-white mt-2">Capas de Singles, Álbuns & Cinema</h3>
+              <p class="text-xs text-gray-300 mt-0.5">Direção de arte atmosférica para lançamentos musicais e audiovisuais.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CATÁLOGO COMPLETO DE SERVIÇOS -->
+    <section id="catalogo" class="py-16 sm:py-20 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-xs font-mono uppercase tracking-[0.25em] text-rex-orange">Loja Oficial REX DESIGN</span>
+          <h2 class="font-luxury font-black text-3xl sm:text-4xl text-white mt-2">CATÁLOGO DE SERVIÇOS</h2>
+          <p class="text-sm sm:text-base text-gray-400 mt-3">
+            Selecione uma categoria ou pesquise pelo serviço ideal. Clique em <strong class="text-white">"VER DETALHES"</strong> para conhecer todos os entregáveis e benefícios de cada criação.
+          </p>
+        </div>
+
+        <!-- Barra de Pesquisa e Filtros por Categoria -->
+        <div class="bg-[#121212] border border-white/10 rounded-2xl p-4 sm:p-6 mb-10 shadow-xl">
+          <div class="flex flex-col lg:flex-row gap-4 justify-between items-stretch lg:items-center">
+            <!-- Campo de Busca -->
+            <div class="relative flex-1">
+              <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+              <input type="text" id="catalog-search" oninput="filterCatalog()" placeholder="Pesquisar serviço (ex: Flyer, Logotipo Gamer, Cardápio, Capa, Thumbnail...)" class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#080808] border border-white/15 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-rex-orange transition-colors" />
+            </div>
+
+            <!-- Contador de Resultados -->
+            <div class="text-xs font-mono text-gray-400 flex items-center justify-between lg:justify-end gap-3">
+              <span>Exibindo <strong id="catalog-count" class="text-rex-gold">31</strong> serviços</span>
+              <button onclick="resetCatalogFilters()" class="text-rex-orange hover:underline">Limpar filtros</button>
+            </div>
+          </div>
+
+          <!-- Abas de Categorias -->
+          <div id="category-filters" class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+        </div>
+
+        <!-- Grid de Produtos do Catálogo -->
+        <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Cards renderizados dinamicamente via JS -->
+        </div>
+
+        <!-- Estado Vazio na Busca -->
+        <div id="catalog-empty" class="hidden text-center py-16 bg-[#111111] rounded-2xl border border-white/10">
+          <i class="fa-solid fa-box-open text-4xl text-gray-600 mb-3"></i>
+          <h3 class="text-lg font-bold text-white">Nenhum serviço encontrado</h3>
+          <p class="text-sm text-gray-400 mt-1">Tente buscar por outro termo ou selecione "Todas as Categorias".</p>
+          <button onclick="resetCatalogFilters()" class="mt-4 px-5 py-2.5 rounded-xl btn-rex-primary text-xs uppercase">Ver Todos os Serviços</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. PRAZO DE ENTREGA & HORÁRIO DE ATENDIMENTO + QR CODE -->
+    <section id="prazos-horarios" class="py-16 carbon-bg border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- NOSSO PRAZO DE ENTREGA -->
+          <div class="lg:col-span-5 neon-border-card rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-rex-red/15 border border-rex-red/40 text-rex-red font-mono text-xs font-bold uppercase mb-5">
+                <i class="fa-solid fa-clock"></i> Agilidade & Compromisso
+              </div>
+              <h2 class="font-luxury font-bold text-2xl sm:text-3xl text-white mb-5">NOSSO PRAZO DE ENTREGA</h2>
+              
+              <div class="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed">
+                <p>Trabalhamos para entregar seu projeto com qualidade, organização e agilidade.</p>
+                <p class="p-4 rounded-xl bg-[#080808] border border-rex-orange/30 text-white font-medium">
+                  O prazo padrão de entrega é de <span class="text-rex-gold font-bold">até 48 horas</span>, contado após a confirmação do pedido e o recebimento de todas as informações e materiais necessários.
+                </p>
+                <p>Projetos maiores ou mais complexos poderão ter prazos diferenciados, informados previamente ao cliente.</p>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-gray-400">
+              <i class="fa-solid fa-shield-halved text-rex-orange text-lg"></i>
+              <span>Acompanhamento direto pelo WhatsApp durante todo o desenvolvimento.</span>
+            </div>
+          </div>
+
+          <!-- HORÁRIO DE ATENDIMENTO + QR CODE -->
+          <div class="lg:col-span-7 neon-border-card rounded-3xl p-7 sm:p-8">
+            <div class="flex flex-col md:flex-row gap-8 items-start justify-between">
+              <div class="flex-1 w-full">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-rex-orange/15 border border-rex-orange/40 text-rex-orange font-mono text-xs font-bold uppercase mb-5">
+                  <i class="fa-solid fa-calendar-check"></i> Suporte Comercial
+                </div>
+                <h2 class="font-luxury font-bold text-2xl sm:text-3xl text-white mb-3">HORÁRIO DE ATENDIMENTO</h2>
+                <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                  Nosso atendimento funciona de segunda a sábado. Entre em contato durante nosso horário comercial para solicitar informações, orçamentos e acompanhar seus pedidos.
+                </p>
+
+                <!-- Grade Completa dos Dias -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm">
+                  <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/5">
+                    <span class="text-gray-300 font-medium">Segunda-feira</span>
+                    <span class="font-mono text-rex-gold font-semibold">09:30 às 18:00</span>
+                  </div>
+                  <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/5">
+                    <span class="text-gray-300 font-medium">Terça-feira</span>
+                    <span class="font-mono text-rex-gold font-semibold">09:30 às 18:00</span>
+                  </div>
+                  <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/5">
+                    <span class="text-gray-300 font-medium">Quarta-feira</span>
+                    <span class="font-mono text-rex-gold font-semibold">09:30 às 18:00</span>
+                  </div>
+                  <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/5">
+                    <span class="text-gray-300 font-medium">Quinta-feira</span>
+                    <span class="font-mono text-rex-gold font-semibold">09:30 às 18:00</span>
+                  </div>
+                  <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/5">
+                    <span class="text-gray-300 font-medium">Sexta-feira</span>
+                    <span class="font-mono text-rex-gold font-semibold">09:30 às 18:00</span>
+                  </div>
+                  <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/5">
+                    <span class="text-gray-300 font-medium">Sábado</span>
+                    <span class="font-mono text-rex-gold font-semibold">09:30 às 18:00</span>
+                  </div>
+                  <div class="sm:col-span-2 flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-rex-red/10 border border-rex-red/30">
+                    <span class="text-white font-semibold">Domingo</span>
+                    <span class="font-mono text-rex-red font-bold uppercase">Fechado</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- QR Code Atendimento WhatsApp -->
+              <div class="w-full md:w-52 shrink-0 bg-[#080808] border border-white/10 rounded-2xl p-4 text-center flex flex-col items-center">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-gray-400 mb-2">Aponte a Câmera</span>
+                <div class="p-2.5 bg-white rounded-xl shadow-lg">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwa.me%2F5521966632766" alt="QR Code WhatsApp REX DESIGN" class="w-36 h-36 object-contain" onerror="this.src='https://placehold.co/160x160/FFFFFF/080808?text=WhatsApp+QR'" />
+                </div>
+                <span class="font-mono text-xs font-bold text-white mt-3">21 96663-2766</span>
+                <a href="https://wa.me/5521966632766" target="_blank" rel="noopener" class="mt-2 w-full py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors">
+                  Abrir WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PERGUNTAS FREQUENTES — FAQ (12 ITENS INTERATIVOS) -->
+    <section id="faq" class="py-16 sm:py-20 border-b border-white/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-mono uppercase tracking-[0.25em] text-rex-orange">Tire suas dúvidas</span>
+          <h2 class="font-luxury font-bold text-2xl sm:text-4xl text-white mt-2">PERGUNTAS FREQUENTES — FAQ</h2>
+          <p class="text-sm text-gray-400 mt-2">Clique sobre uma pergunta para visualizar a resposta completa.</p>
+        </div>
+
+        <div id="faq-container" class="space-y-3">
+          <!-- Renderizado via JS com todas as 12 perguntas e respostas oficiais -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ÁREA DE FEEDBACK, AVALIAÇÕES E SUGESTÕES (SEM DADOS FICTÍCIOS) -->
+    <section id="avaliacoes" class="py-16 sm:py-20 carbon-bg border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-mono uppercase tracking-[0.25em] text-rex-gold">Transparência & Qualidade</span>
+          <h2 class="font-luxury font-bold text-2xl sm:text-4xl text-white mt-2">OPINIÃO DOS NOSSOS CLIENTES</h2>
+          <p class="text-sm sm:text-base text-gray-400 mt-2">
+            Experiências reais compartilhadas por clientes que contrataram os serviços da REX DESIGN.
+          </p>
+        </div>
+
+        <!-- Exibição das Avaliações Aprovadas -->
+        <div id="approved-reviews-container" class="mb-14">
+          <!-- Renderizado dinamicamente: estado vazio elegante se não houver avaliações aprovadas -->
+        </div>
+
+        <!-- Formulários: Enviar Avaliação & Enviar Sugestão -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Formulário de Avaliação de Cliente -->
+          <div class="lg:col-span-7 neon-border-card rounded-3xl p-6 sm:p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-rex-gold/15 border border-rex-gold/40 flex items-center justify-center text-rex-gold">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>
+                <h3 class="font-luxury font-bold text-xl text-white">AVALIE NOSSO SERVIÇO</h3>
+                <p class="text-xs text-gray-400">Já contratou a REX DESIGN? Compartilhe como foi sua experiência.</p>
+              </div>
+            </div>
+
+            <form id="review-form" onsubmit="submitReview(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Seu Nome *</label>
+                  <input type="text" id="rev-name" required placeholder="Digite seu nome" class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Serviço Contratado *</label>
+                  <select id="rev-service" required class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange">
+                    <!-- Populado com os serviços do catálogo -->
+                  </select>
+                </div>
+              </div>
+
+              <!-- Seletor de 1 a 5 Estrelas -->
+              <div>
+                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Sua Avaliação (1 a 5 estrelas) *</label>
+                <div class="flex items-center gap-2" id="star-rating-selector">
+                  <button type="button" onclick="setRating(1)" data-star="1" class="star-btn text-2xl text-rex-gold transition-transform hover:scale-110"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(2)" data-star="2" class="star-btn text-2xl text-rex-gold transition-transform hover:scale-110"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(3)" data-star="3" class="star-btn text-2xl text-rex-gold transition-transform hover:scale-110"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(4)" data-star="4" class="star-btn text-2xl text-rex-gold transition-transform hover:scale-110"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(5)" data-star="5" class="star-btn text-2xl text-rex-gold transition-transform hover:scale-110"><i class="fa-solid fa-star"></i></button>
+                  <span id="rating-label" class="ml-2 text-xs font-mono text-gray-400">5 de 5 estrelas</span>
+                </div>
+                <input type="hidden" id="rev-rating" value="5" />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Seu Comentário *</label>
+                <textarea id="rev-comment" rows="3" required placeholder="Conte o que achou da arte, do atendimento e do prazo de entrega..." class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange"></textarea>
+              </div>
+
+              <label class="flex items-start gap-2.5 cursor-pointer text-xs text-gray-300">
+                <input type="checkbox" id="rev-consent" required class="mt-0.5 rounded bg-[#080808] border-white/20 text-rex-orange focus:ring-rex-orange" />
+                <span>Autorizo a publicação do meu depoimento no site oficial da REX DESIGN após moderação.</span>
+              </label>
+
+              <button type="submit" class="w-full sm:w-auto px-7 py-3.5 rounded-xl btn-rex-primary text-xs uppercase tracking-wider">
+                ENVIAR AVALIAÇÃO
+              </button>
+            </form>
+          </div>
+
+          <!-- Formulário paralelo: ENVIE SUA SUGESTÃO -->
+          <div class="lg:col-span-5 neon-border-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-rex-orange/15 border border-rex-orange/40 flex items-center justify-center text-rex-orange">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                  <h3 class="font-luxury font-bold text-xl text-white">ENVIE SUA SUGESTÃO</h3>
+                  <p class="text-xs text-gray-400">Ideias de novos serviços ou melhorias para nossa loja.</p>
+                </div>
+              </div>
+
+              <form id="suggestion-form" onsubmit="submitSuggestion(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Seu Nome (Opcional)</label>
+                  <input type="text" id="sug-name" placeholder="Como podemos te chamar?" class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Sua Sugestão *</label>
+                  <textarea id="sug-message" rows="5" required placeholder="Escreva sua sugestão sobre o site, atendimento ou algum serviço gráfico que gostaria de ver no catálogo..." class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl btn-rex-outline text-xs font-bold uppercase tracking-wider">
+                  ENVIAR SUGESTÃO
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== PÁGINA INDIVIDUAL DE DETALHES DO SERVIÇO ==================== -->
+  <section id="service-detail-view" class="hidden pt-24 pb-20 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Botão Voltar -->
+      <button onclick="navigateToHome('catalogo')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rex-graphite hover:bg-[#252525] border border-white/10 text-sm text-gray-200 hover:text-rex-orange mb-8 transition-colors">
+        <i class="fa-solid fa-arrow-left"></i> Voltar ao Catálogo
+      </button>
+
+      <div id="service-detail-content">
+        <!-- Preenchido dinamicamente ao abrir um produto -->
+      </div>
+
+      <!-- VOCÊ TAMBÉM PODE SE INTERESSAR -->
+      <div class="mt-16 pt-12 border-t border-white/10">
+        <h3 class="font-luxury font-bold text-2xl text-white mb-6">VOCÊ TAMBÉM PODE SE INTERESSAR</h3>
+        <div id="related-services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 3 serviços relacionados -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PAINEL ADMINISTRATIVO PROTEGIDO ==================== -->
+  <section id="admin-view" class="hidden pt-24 pb-20 min-h-screen carbon-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Tela de Autenticação Administrativa -->
+      <div id="admin-login-box" class="max-w-md mx-auto my-12 neon-border-card rounded-3xl p-8">
+        <div class="text-center mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-rex-red/20 border border-rex-red/50 text-rex-red flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <h2 class="font-luxury font-bold text-2xl text-white">ÁREA ADMINISTRATIVA</h2>
+          <p class="text-xs text-gray-400 mt-1">Acesso restrito ao gerenciamento da loja REX DESIGN.</p>
+        </div>
+
+        <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Identificador do Administrador</label>
+            <input type="text" id="admin-user-input" required autocomplete="username" placeholder="Usuário administrativo" class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1.5">Chave de Acesso</label>
+            <input type="password" id="admin-pass-input" required autocomplete="current-password" placeholder="••••••••" class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+          </div>
+          <p id="admin-login-error" class="hidden text-xs text-rex-red font-medium"></p>
+          <button type="submit" class="w-full py-3.5 rounded-xl btn-rex-primary text-xs uppercase tracking-wider">
+            AUTENTICAR NO PAINEL
+          </button>
+          <button type="button" onclick="navigateToHome()" class="w-full py-2.5 text-xs text-gray-400 hover:text-white">
+            Voltar para a Loja
+          </button>
+        </form>
+      </div>
+
+      <!-- Dashboard Administrativo Autenticado -->
+      <div id="admin-dashboard-box" class="hidden space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#121212] border border-white/10 rounded-2xl p-6">
+          <div>
+            <span class="text-xs font-mono uppercase text-rex-gold">Painel de Controle Oficial</span>
+            <h2 class="font-luxury font-bold text-2xl text-white">GERENCIAMENTO REX DESIGN</h2>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <button onclick="navigateToHome()" class="px-4 py-2.5 rounded-xl bg-rex-graphite hover:bg-[#252525] text-xs font-semibold text-white border border-white/10">
+              <i class="fa-solid fa-store mr-1.5 text-rex-orange"></i> Ver Loja Pública
+            </button>
+            <button onclick="logoutAdmin()" class="px-4 py-2.5 rounded-xl bg-rex-red/20 hover:bg-rex-red/30 text-xs font-semibold text-rex-red border border-rex-red/40">
+              <i class="fa-solid fa-right-from-bracket mr-1.5"></i> Sair
+            </button>
+          </div>
+        </div>
+
+        <!-- Abas Administrativas -->
+        <div class="flex flex-wrap gap-2 border-b border-white/10 pb-4">
+          <button onclick="switchAdminTab('services')" id="tab-btn-services" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase btn-rex-primary">
+            Catálogo de Serviços
+          </button>
+          <button onclick="switchAdminTab('categories')" id="tab-btn-categories" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase bg-rex-graphite text-gray-300">
+            Categorias
+          </button>
+          <button onclick="switchAdminTab('orders')" id="tab-btn-orders" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase bg-rex-graphite text-gray-300">
+            Solicitações (<span id="admin-orders-count">0</span>)
+          </button>
+          <button onclick="switchAdminTab('reviews')" id="tab-btn-reviews" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase bg-rex-graphite text-gray-300">
+            Avaliações (<span id="admin-reviews-count">0</span>)
+          </button>
+          <button onclick="switchAdminTab('suggestions')" id="tab-btn-suggestions" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase bg-rex-graphite text-gray-300">
+            Sugestões (<span id="admin-suggestions-count">0</span>)
+          </button>
+          <button onclick="switchAdminTab('security')" id="tab-btn-security" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase bg-rex-graphite text-gray-300">
+            Segurança
+          </button>
+        </div>
+
+        <!-- ABA 1: GERENCIAR CATÁLOGO -->
+        <div id="admin-tab-services" class="admin-tab-panel space-y-6">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <h3 class="font-bold text-lg text-white">Serviços Cadastrados</h3>
+            <button onclick="openServiceEditorModal()" class="px-5 py-3 rounded-xl btn-rex-primary text-xs uppercase">
+              <i class="fa-solid fa-plus mr-1.5"></i> Cadastrar Novo Serviço
+            </button>
+          </div>
+          <div id="admin-services-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Lista de serviços editáveis -->
+          </div>
+        </div>
+
+        <!-- ABA 2: GERENCIAR CATEGORIAS -->
+        <div id="admin-tab-categories" class="admin-tab-panel hidden space-y-6">
+          <div class="neon-border-card rounded-2xl p-6 max-w-xl">
+            <h3 class="font-bold text-lg text-white mb-4">Criar Nova Categoria</h3>
+            <form onsubmit="addNewCategory(event)" class="flex gap-3">
+              <input type="text" id="new-category-name" required placeholder="Nome da nova categoria..." class="flex-1 px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+              <button type="submit" class="px-5 py-3 rounded-xl btn-rex-primary text-xs uppercase">Criar</button>
+            </form>
+          </div>
+
+          <div id="admin-categories-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Lista de categorias -->
+          </div>
+        </div>
+
+        <!-- ABA 3: SOLICITAÇÕES RECEBIDAS -->
+        <div id="admin-tab-orders" class="admin-tab-panel hidden space-y-4">
+          <h3 class="font-bold text-lg text-white">Solicitações de Orçamento Registradas</h3>
+          <div id="admin-orders-list" class="space-y-4"></div>
+        </div>
+
+        <!-- ABA 4: MODERAÇÃO DE AVALIAÇÕES -->
+        <div id="admin-tab-reviews" class="admin-tab-panel hidden space-y-4">
+          <h3 class="font-bold text-lg text-white">Moderação de Depoimentos e Notas</h3>
+          <div id="admin-reviews-list" class="space-y-4"></div>
+        </div>
+
+        <!-- ABA 5: SUGESTÕES DOS VISITANTES -->
+        <div id="admin-tab-suggestions" class="admin-tab-panel hidden space-y-4">
+          <h3 class="font-bold text-lg text-white">Sugestões Enviadas pelos Visitantes</h3>
+          <div id="admin-suggestions-list" class="space-y-4"></div>
+        </div>
+
+        <!-- ABA 6: CONFIGURAÇÃO DE SEGURANÇA -->
+        <div id="admin-tab-security" class="admin-tab-panel hidden">
+          <div class="neon-border-card rounded-2xl p-6 max-w-lg space-y-4">
+            <h3 class="font-bold text-lg text-white">Atualizar Credenciais Administrativas</h3>
+            <p class="text-xs text-gray-400">Defina um novo usuário e chave de acesso para proteger o painel.</p>
+            <form onsubmit="updateAdminCredentials(event)" class="space-y-3">
+              <input type="text" id="sec-new-user" required placeholder="Novo usuário" class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm" />
+              <input type="password" id="sec-new-pass" required minlength="6" placeholder="Nova senha (mín. 6 caracteres)" class="w-full px-4 py-3 rounded-xl bg-[#080808] border border-white/15 text-white text-sm" />
+              <button type="submit" class="px-6 py-3 rounded-xl btn-rex-primary text-xs uppercase">Salvar Novas Credenciais</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GAVETA / MODAL DE CARRINHO E CHECKOUT WHATSAPP ==================== -->
+  <div id="cart-drawer" class="fixed inset-0 z-[70] hidden">
+    <div onclick="closeCartDrawer()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-xl bg-[#0e0e0e] border-l border-white/15 flex flex-col shadow-2xl">
+      
+      <!-- Cabeçalho da Gaveta -->
+      <div class="px-6 py-5 border-b border-white/10 flex items-center justify-between bg-[#121212]">
+        <div>
+          <span class="text-[11px] font-mono uppercase text-rex-orange">Orçamento & Contratação</span>
+          <h3 class="font-luxury font-bold text-xl text-white">SEU PEDIDO NA REX DESIGN</h3>
+        </div>
+        <button onclick="closeCartDrawer()" class="w-10 h-10 rounded-xl bg-rex-graphite hover:bg-rex-red/20 text-gray-300 hover:text-rex-red flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Corpo Rolável -->
+      <div class="flex-1 overflow-y-auto p-6 space-y-6">
+        
+        <!-- Lista de Serviços Selecionados -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-xs font-mono uppercase tracking-wider text-gray-400">Serviços Selecionados</h4>
+            <button onclick="closeCartDrawer(); navigateToHome('catalogo')" class="text-xs text-rex-orange hover:underline">+ Adicionar mais serviços</button>
+          </div>
+
+          <div id="cart-items-list" class="space-y-2.5">
+            <!-- Itens do carrinho -->
+          </div>
+
+          <!-- Subtotal -->
+          <div class="mt-4 p-4 rounded-xl bg-[#151515] border border-rex-gold/30 flex items-center justify-between">
+            <span class="text-sm font-semibold text-gray-300">Subtotal Estimado:</span>
+            <span id="cart-subtotal" class="font-mono font-bold text-xl text-rex-gold">R$ 0,00</span>
+          </div>
+        </div>
+
+        <!-- Formulário de Briefing e Finalização -->
+        <form id="checkout-form" onsubmit="finalizeOrderWhatsApp(event)" class="space-y-4 pt-4 border-t border-white/10">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-rex-orange">Informações do Projeto</h4>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Seu Nome Completo *</label>
+              <input type="text" id="order-name" required placeholder="Ex: Carlos Eduardo" class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Seu WhatsApp / Contato *</label>
+              <input type="tel" id="order-phone" required placeholder="(21) 99999-9999" class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Descreva o que você deseja *</label>
+            <textarea id="order-desc" rows="3" required placeholder="Informe o tema, textos principais, objetivo da arte e detalhes importantes..." class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Prazo Desejado *</label>
+              <select id="order-deadline" class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange">
+                <option value="Padrão (até 48 horas)">Padrão (até 48 horas)</option>
+                <option value="Urgente (consultar disponibilidade)">Urgente (consultar disponibilidade)</option>
+                <option value="Flexível / Sem pressa">Flexível / Sem pressa</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Estilo Visual / Cores</label>
+              <input type="text" id="order-style" placeholder="Ex: Dark, Luxo, Vermelho e Preto..." class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm focus:outline-none focus:border-rex-orange" />
+            </div>
+          </div>
+
+          <!-- Anexo de Referências com Validação -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Anexar Imagens, Logotipos ou Referências (Opcional)</label>
+            <label class="flex flex-col items-center justify-center p-4 rounded-xl border border-dashed border-white/25 hover:border-rex-orange bg-[#080808] cursor-pointer transition-colors">
+              <i class="fa-solid fa-cloud-arrow-up text-xl text-rex-orange mb-1"></i>
+              <span class="text-xs text-gray-300">Clique para selecionar imagens ou PDFs (máx. 5MB por arquivo)</span>
+              <input type="file" id="order-files" multiple accept="image/*,.pdf" onchange="handleOrderFiles(event)" class="hidden" />
+            </label>
+            <div id="order-files-preview" class="mt-2 space-y-1.5"></div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-300">
+            <i class="fa-brands fa-whatsapp mr-1.5"></i> Ao clicar abaixo, sua solicitação será formatada automaticamente e você será direcionado ao WhatsApp oficial da <strong>REX DESIGN (21 96663-2766)</strong>.
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl btn-rex-primary text-sm uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-neon-dual">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            FINALIZAR PEDIDO PELO WHATSAPP
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL ADMINISTRATIVO: CRIAR / EDITAR SERVIÇO ==================== -->
+  <div id="service-editor-modal" class="fixed inset-0 z-[80] hidden flex items-center justify-center p-4">
+    <div onclick="closeServiceEditorModal()" class="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-2xl bg-[#121212] border border-white/15 rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto z-10">
+      <div class="flex items-center justify-between mb-6">
+        <h3 id="editor-modal-title" class="font-luxury font-bold text-xl text-white">EDITAR SERVIÇO</h3>
+        <button onclick="closeServiceEditorModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+
+      <form onsubmit="saveServiceForm(event)" class="space-y-4">
+        <input type="hidden" id="edit-srv-id" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Nome do Serviço *</label>
+            <input type="text" id="edit-srv-name" required class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Preço (R$) *</label>
+            <input type="number" step="0.01" min="1" id="edit-srv-price" required class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Categoria *</label>
+            <select id="edit-srv-category" required class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm"></select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">URL da Imagem Mockup</label>
+            <input type="url" id="edit-srv-image" placeholder="https://..." class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Descrição (O que é este serviço) *</label>
+          <textarea id="edit-srv-desc" rows="2" required class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Resultado / Benefícios Obtidos *</label>
+          <textarea id="edit-srv-result" rows="2" required class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Por que contratar este serviço? *</label>
+          <textarea id="edit-srv-why" rows="2" required class="w-full px-3.5 py-2.5 rounded-xl bg-[#080808] border border-white/15 text-white text-sm"></textarea>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-4">
+          <button type="button" onclick="closeServiceEditorModal()" class="px-5 py-2.5 rounded-xl bg-rex-graphite text-xs text-gray-300">Cancelar</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl btn-rex-primary text-xs uppercase">Salvar Serviço</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== BOTÃO FLUTUANTE WHATSAPP ==================== -->
+  <a href="https://wa.me/5521966632766?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20REX%20DESIGN%20e%20gostaria%20de%20um%20atendimento." target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp" class="fixed bottom-5 right-5 z-50 group flex items-center gap-3 bg-[#121212]/95 hover:bg-[#191919] border border-emerald-500/50 pl-4 pr-2.5 py-2.5 rounded-full shadow-2xl transition-all">
+    <span class="hidden sm:inline text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">
+      Fale conosco pelo WhatsApp
+    </span>
+    <span class="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center text-2xl whatsapp-pulse shadow-lg">
+      <i class="fa-brands fa-whatsapp"></i>
+    </span>
+  </a>
+
+  <!-- ==================== RODAPÉ OFICIAL ==================== -->
+  <footer class="bg-[#060606] border-t border-white/10 pt-14 pb-24 sm:pb-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Marca -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rex-red to-rex-orange flex items-center justify-center font-luxury font-black text-white text-sm">
+              REX
+            </div>
+            <div>
+              <h3 class="font-luxury font-bold text-lg text-white">REX DESIGN</h3>
+              <p class="text-xs text-rex-gold font-medium">"Você sonha, nós criamos!"</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Criações gráficas e soluções visuais para destacar suas ideias e fortalecer sua marca.
+          </p>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div>
+          <h4 class="font-mono text-xs uppercase tracking-widest text-rex-orange mb-4">Navegação</h4>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="#inicio" onclick="navigateToHome()" class="hover:text-white transition-colors">Página inicial</a></li>
+            <li><a href="#catalogo" onclick="navigateToHome('catalogo')" class="hover:text-white transition-colors">Catálogo</a></li>
+            <li><a href="#galeria" onclick="navigateToHome('galeria')" class="hover:text-white transition-colors">Sobre nós & Portfólio</a></li>
+            <li><a href="#faq" onclick="navigateToHome('faq')" class="hover:text-white transition-colors">Perguntas frequentes</a></li>
+            <li><a href="#avaliacoes" onclick="navigateToHome('avaliacoes')" class="hover:text-white transition-colors">Feedback</a></li>
+            <li><a href="https://wa.me/5521966632766" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato & Horário -->
+        <div>
+          <h4 class="font-mono text-xs uppercase tracking-widest text-rex-orange mb-4">Atendimento Oficial</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-center gap-2.5">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+              <a href="https://wa.me/5521966632766" target="_blank" rel="noopener" class="hover:text-rex-gold font-mono font-semibold">
+                WhatsApp: 21 96663-2766
+              </a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-clock text-rex-orange mt-1"></i>
+              <span>Horário: Segunda a sábado, das 09:30 às 18:00.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Acesso Restrito -->
+        <div>
+          <h4 class="font-mono text-xs uppercase tracking-widest text-rex-orange mb-4">Gerenciamento</h4>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Acesso exclusivo para administração do catálogo, preços, pedidos e moderação de avaliações.
+          </p>
+          <button onclick="openAdminPanel()" class="px-4 py-2.5 rounded-xl bg-rex-graphite hover:bg-[#242424] border border-white/10 text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-2 transition-colors">
+            <i class="fa-solid fa-shield-halved text-rex-red"></i> Área Administrativa
+          </button>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <p>© REX DESIGN — Todos os direitos reservados.</p>
+        <p class="font-mono">Estética Industrial & Design Gráfico Profissional</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS & FIRESTORE INTEGRATION ==================== -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // ==================== CATÁLOGO BASE OFICIAL (31 SERVIÇOS) ====================
+    const INITIAL_CATEGORIES = [
+      "Design Gráfico e Publicidade",
+      "Convites e Materiais Pessoais",
+      "Logotipos e Identidade Visual",
+      "YouTube, Música e Entretenimento"
+    ];
+
+    const INITIAL_SERVICES = [
+      // CATEGORIA 1 — DESIGN GRÁFICO E PUBLICIDADE
+      {
+        id: "srv-01",
+        name: "Flyer Simples",
+        category: "Design Gráfico e Publicidade",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de uma arte promocional objetiva para divulgar produtos, serviços, eventos ou ofertas.",
+        purpose: "Ideal para comunicações diretas em redes sociais, grupos de WhatsApp e divulgação rápida de promoções.",
+        deliverables: "Uma peça gráfica personalizada com informações, textos e elementos visuais organizados em alta resolução (PNG/JPG).",
+        result: "Seu anúncio terá uma apresentação mais organizada e atrativa, facilitando a comunicação da sua oferta com o público.",
+        whyHire: "Um flyer claro e bem diagramado evita poluição visual e garante que o cliente entenda sua oferta nos primeiros segundos de visualização."
+      },
+      {
+        id: "srv-02",
+        name: "Flyer Profissional",
+        category: "Design Gráfico e Publicidade",
+        price: 35.00,
+        featured: true,
+        active: true,
+        image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de uma arte publicitária mais elaborada, com composição visual personalizada, imagens, tipografia e efeitos gráficos.",
+        purpose: "Desenvolvido para campanhas principais, eventos de destaque, lançamentos comerciais e anúncios patrocinados.",
+        deliverables: "Arte publicitária de alto impacto com tratamento de luz, sombras, efeitos gráficos e tipografia selecionada em alta resolução.",
+        result: "Seu negócio, produto ou evento ganhará uma apresentação visual mais marcante e profissional.",
+        whyHire: "Em um mercado competitivo, o acabamento profissional diferencia sua marca dos concorrentes amadores e aumenta a credibilidade imediata."
+      },
+      {
+        id: "srv-03",
+        name: "Panfleto Digital",
+        category: "Design Gráfico e Publicidade",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+        description: "Material digital desenvolvido para divulgar empresas, promoções, serviços e campanhas.",
+        purpose: "Perfeito para envio em listas de transmissão, atendimento comercial e apresentação de serviços locais.",
+        deliverables: "Panfleto digital formatado para leitura fluida em telas de celulares e compartilhamento instantâneo.",
+        result: "Você terá um material pronto para compartilhar no WhatsApp, redes sociais e outros canais digitais.",
+        whyHire: "Facilita a apresentação comercial do seu negócio diretamente na palma da mão do cliente, gerando respostas mais rápidas."
+      },
+      {
+        id: "srv-04",
+        name: "Banner Digital",
+        category: "Design Gráfico e Publicidade",
+        price: 30.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de banner gráfico para divulgação de marcas, produtos, eventos ou anúncios.",
+        purpose: "Indicado para sites, lojas virtuais, cabeçalhos de redes sociais, vitrines digitais e campanhas online.",
+        deliverables: "Banner digital nas dimensões solicitadas com hierarquia visual estratégica e acabamento em alta definição.",
+        result: "Sua mensagem ganhará destaque em uma peça visual adequada para divulgação digital.",
+        whyHire: "Banners bem estruturados guiam o olhar do visitante diretamente para a chamada principal e fortalecem sua vitrine online."
+      },
+      {
+        id: "srv-05",
+        name: "Arte Publicitária",
+        category: "Design Gráfico e Publicidade",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=80",
+        description: "Peça gráfica desenvolvida para apresentar uma oferta, divulgar um produto ou promover um serviço.",
+        purpose: "Voltada para anúncios digitais, tráfego pago e campanhas promocionais em múltiplas plataformas.",
+        deliverables: "Peça publicitária personalizada com foco em contraste, legibilidade e apelo comercial.",
+        result: "Sua publicidade terá uma comunicação visual mais estratégica e atrativa.",
+        whyHire: "Transforma informações comerciais comuns em uma proposta visual persuasiva que valoriza o seu produto."
+      },
+      {
+        id: "srv-06",
+        name: "Arte para Post",
+        category: "Design Gráfico e Publicidade",
+        price: 20.00,
+        featured: true,
+        active: true,
+        image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de imagens personalizadas para publicações em redes sociais.",
+        purpose: "Ideal para alimentar o feed do Instagram e Facebook com consistência estética e profissionalismo.",
+        deliverables: "Arte otimizada para feed (quadrada ou retrato) com identidade alinhada ao seu perfil.",
+        result: "Seu perfil terá publicações visualmente mais organizadas, criativas e alinhadas à sua comunicação.",
+        whyHire: "Um feed harmonioso e profissional retém visitantes e transmite confiança para quem conhece sua página pela primeira vez."
+      },
+      {
+        id: "srv-07",
+        name: "Arte para Story",
+        category: "Design Gráfico e Publicidade",
+        price: 20.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=800&q=80",
+        description: "Arte vertical desenvolvida para Stories de Instagram, Facebook e WhatsApp.",
+        purpose: "Criada para avisos rápidos, ofertas relâmpago, agendas e engajamento diário em tela cheia.",
+        deliverables: "Arte vertical (9:16) com composição dinâmica e margens seguras para botões e interações.",
+        result: "Você terá uma peça visual preparada para chamar a atenção do público durante a navegação nas redes sociais.",
+        whyHire: "No formato vertical, o impacto imediato impede que o usuário pule seu conteúdo e aumenta o engajamento."
+      },
+      {
+        id: "srv-08",
+        name: "Cartaz Promocional",
+        category: "Design Gráfico e Publicidade",
+        price: 30.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de cartaz para divulgar promoções, eventos, campanhas e comunicados.",
+        purpose: "Excelente para divulgação de feirões, eventos culturais, campanhas sazonais e avisos comerciais.",
+        deliverables: "Arte de cartaz digital em alta resolução com leitura clara e destaque para datas, locais e ofertas.",
+        result: "Sua divulgação terá uma apresentação visual clara, destacando as principais informações.",
+        whyHire: "Organiza grande volume de informações de maneira limpa e atraente, garantindo que nenhum detalhe passe despercebido."
+      },
+      {
+        id: "srv-09",
+        name: "Cardápio Digital Simples",
+        category: "Design Gráfico e Publicidade",
+        price: 35.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de cardápio digital organizado com produtos, nomes e preços fornecidos pelo cliente.",
+        purpose: "Perfeito para lanchonetes, pizzarias, hamburguerias, docerias e deliveries que atendem via WhatsApp.",
+        deliverables: "Cardápio digital limpo, organizado e de fácil leitura para envio rápido aos clientes.",
+        result: "Seu estabelecimento terá um cardápio mais apresentável para enviar aos clientes pelo WhatsApp.",
+        whyHire: "Substitui listas de texto desorganizadas por uma apresentação profissional que facilita o pedido do cliente."
+      },
+      {
+        id: "srv-10",
+        name: "Cardápio Profissional",
+        category: "Design Gráfico e Publicidade",
+        price: 55.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+        description: "Desenvolvimento de cardápio personalizado com organização visual, imagens, categorias e identidade gráfica.",
+        purpose: "Indicado para restaurantes, bares, cafeterias e deliveries que buscam valorizar seus pratos e aumentar o ticket médio.",
+        deliverables: "Cardápio completo diagramado com fotos tratadas, divisão por seções e identidade visual exclusiva.",
+        result: "Seus produtos ganharão uma apresentação mais atraente, valorizando a experiência de consulta dos clientes.",
+        whyHire: "Um cardápio visualmente apetitoso e bem estruturado desperta o desejo de compra e eleva a percepção de valor do seu negócio."
+      },
+      {
+        id: "srv-11",
+        name: "Edição de Imagem",
+        category: "Design Gráfico e Publicidade",
+        price: 15.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80",
+        description: "Ajustes e melhorias em imagens, incluindo correção visual, iluminação, cores e pequenos elementos gráficos.",
+        purpose: "Ideal para valorizar fotos de produtos, retratos profissionais, capas e imagens para divulgação.",
+        deliverables: "Imagem tratada com balanço de cores, nitidez, iluminação aprimorada e acabamento limpo.",
+        result: "Sua imagem terá uma aparência mais cuidada e adequada à finalidade desejada.",
+        whyHire: "Pequenos ajustes de luz e cor transformam fotografias comuns em imagens com padrão profissional."
+      },
+      {
+        id: "srv-12",
+        name: "Montagem Fotográfica",
+        category: "Design Gráfico e Publicidade",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+        description: "Composição de imagens com combinação de fotografias, elementos gráficos e efeitos visuais.",
+        purpose: "Criada para homenagens, campanhas criativas, artes temáticas, capas e projetos personalizados.",
+        deliverables: "Composição artística integrada com ambientação de luz, recortes precisos e efeitos visuais.",
+        result: "Você terá uma montagem personalizada para divulgar, presentear ou utilizar em seus projetos.",
+        whyHire: "Permite unir ideias e cenários diferentes em uma única imagem criativa com acabamento realista."
+      },
+      {
+        id: "srv-13",
+        name: "Mockup de Produto",
+        category: "Design Gráfico e Publicidade",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=800&q=80",
+        description: "Apresentação visual simulada de um produto aplicado em objetos, embalagens, dispositivos ou materiais.",
+        purpose: "Excelente para apresentar marcas em camisetas, canecas, embalagens, telas de celular ou quadros antes da produção.",
+        deliverables: "Imagem fotorrealista do seu logotipo ou arte aplicado no mockup escolhido.",
+        result: "Você conseguirá visualizar e apresentar sua criação em uma representação mais realista e profissional.",
+        whyHire: "Valoriza sua apresentação comercial mostrando exatamente como o produto ficará no mundo real."
+      },
+
+      // CATEGORIA 2 — CONVITES E MATERIAIS PESSOAIS
+      {
+        id: "srv-14",
+        name: "Convite Digital",
+        category: "Convites e Materiais Pessoais",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de convite digital para aniversários, comemorações, reuniões e eventos.",
+        purpose: "Prático para enviar pelo WhatsApp e redes sociais com todas as informações de data, hora e local.",
+        deliverables: "Convite digital em alta resolução pronto para envio imediato aos convidados.",
+        result: "Você terá um convite personalizado para compartilhar facilmente com seus convidados.",
+        whyHire: "Economiza tempo e garante elegância e clareza ao convidar amigos, familiares ou clientes."
+      },
+      {
+        id: "srv-15",
+        name: "Convite Personalizado",
+        category: "Convites e Materiais Pessoais",
+        price: 35.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
+        description: "Convite desenvolvido com identidade visual exclusiva, tema escolhido, elementos decorativos e informações do evento.",
+        purpose: "Ideal para festas temáticas, casamentos, formaturas, eventos corporativos e celebrações especiais.",
+        deliverables: "Arte exclusiva criada sob medida de acordo com o tema e a paleta de cores do seu evento.",
+        result: "Seu evento terá uma apresentação mais especial e personalizada desde o primeiro contato com os convidados.",
+        whyHire: "Cria expectativa e encanta os convidados logo no primeiro momento, refletindo o cuidado com a celebração."
+      },
+      {
+        id: "srv-16",
+        name: "Cartão de Visita Digital",
+        category: "Convites e Materiais Pessoais",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de cartão de visita digital com nome, profissão, telefone, redes sociais e informações comerciais.",
+        purpose: "Indicado para autônomos, empresários, prestadores de serviço e representantes comerciais.",
+        deliverables: "Cartão digital moderno e organizado para compartilhamento rápido em conversas e perfis.",
+        result: "Você terá uma apresentação profissional dos seus contatos, facilitando que outras pessoas conheçam e encontrem seu trabalho.",
+        whyHire: "Transmite seriedade e organização toda vez que um cliente pedir seu contato profissional."
+      },
+      {
+        id: "srv-17",
+        name: "Currículo Profissional",
+        category: "Convites e Materiais Pessoais",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
+        description: "Organização e diagramação de currículo com aparência moderna, profissional e informações fornecidas pelo cliente.",
+        purpose: "Ideal para candidatos que desejam se destacar em processos seletivos com uma leitura limpa e executiva.",
+        deliverables: "Currículo diagramado em PDF de alta qualidade, pronto para envio digital ou impressão.",
+        result: "Você terá um currículo visualmente organizado para apresentar sua trajetória profissional.",
+        whyHire: "Recrutadores analisam currículos em poucos segundos; uma diagramação clara destaca suas qualidades imediatamente."
+      },
+
+      // CATEGORIA 3 — LOGOTIPOS E IDENTIDADE VISUAL
+      {
+        id: "srv-18",
+        name: "Logotipo Esportivo",
+        category: "Logotipos e Identidade Visual",
+        price: 35.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de logotipo para equipes, clubes, times amadores e projetos esportivos.",
+        purpose: "Desenvolvido para times de futebol, e-sports, academias, ligas e projetos atléticos.",
+        deliverables: "Escudo/logotipo esportivo em alta resolução com fundo transparente e versão de apresentação.",
+        result: "Sua equipe terá uma identidade visual própria para utilizar em uniformes, redes sociais e materiais de divulgação.",
+        whyHire: "Fortalece o espírito de equipe e impõe respeito visual dentro e fora das competições."
+      },
+      {
+        id: "srv-19",
+        name: "Logotipo Gamer",
+        category: "Logotipos e Identidade Visual",
+        price: 35.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de logotipo personalizado para jogadores, streamers, equipes e comunidades gamer.",
+        purpose: "Ideal para canais de live, perfis competitivos, clãs e criadores de conteúdo gamer.",
+        deliverables: "Logotipo gamer com estilo marcante em alta resolução (PNG transparente e versão com fundo).",
+        result: "Seu projeto gamer ganhará uma identidade visual que ajudará a diferenciá-lo de outros perfis e equipes.",
+        whyHire: "No universo gamer, um símbolo forte torna seu canal ou equipe imediatamente reconhecível pelo público."
+      },
+      {
+        id: "srv-20",
+        name: "Logotipo para Discord",
+        category: "Logotipos e Identidade Visual",
+        price: 35.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=800&q=80",
+        description: "Desenvolvimento de logotipo para servidores, comunidades e grupos do Discord.",
+        purpose: "Criado para dar identidade própria a servidores de jogos, estudos, lojas e comunidades digitais.",
+        deliverables: "Ícone otimizado para o formato circular do Discord em alta definição.",
+        result: "Sua comunidade terá uma identidade visual personalizada para fortalecer seu reconhecimento.",
+        whyHire: "Um ícone profissional atrai novos membros e passa organização e autoridade para sua comunidade."
+      },
+      {
+        id: "srv-21",
+        name: "Identidade Visual Básica",
+        category: "Logotipos e Identidade Visual",
+        price: 90.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de uma identidade visual inicial para empresas, profissionais e projetos pessoais.",
+        purpose: "Ideal para quem está iniciando um negócio ou projeto e precisa de padrão visual profissional.",
+        deliverables: "Logotipo principal, variações básicas e definição de cores para uso nas redes sociais.",
+        result: "Você terá uma base visual para começar a apresentar sua marca de maneira mais consistente.",
+        whyHire: "Garante que sua marca comece com o pé direito, evitando improvisos visuais que prejudicam a credibilidade."
+      },
+      {
+        id: "srv-22",
+        name: "Identidade Visual Completa",
+        category: "Logotipos e Identidade Visual",
+        price: 150.00,
+        featured: true,
+        active: true,
+        image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=800&q=80",
+        description: "Desenvolvimento de um conjunto visual mais completo, incluindo logotipo, cores, tipografia e aplicações gráficas básicas.",
+        purpose: "Solução completa para empresas, marcas autorais e projetos que buscam posicionamento sólido e profissional.",
+        deliverables: "Logotipo principal e secundário, paleta de cores oficial, guia tipográfico e aplicações gráficas básicas.",
+        result: "Sua marca terá uma apresentação visual mais consistente, facilitando sua identificação em diferentes materiais.",
+        whyHire: "Consistência visual constrói autoridade, memorização de marca e valoriza seus produtos ou serviços diante do mercado."
+      },
+      {
+        id: "srv-23",
+        name: "Ajuste ou Modernização de Logo",
+        category: "Logotipos e Identidade Visual",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=800&q=80",
+        description: "Atualização visual de um logotipo existente, com ajustes em elementos, cores, composição e apresentação.",
+        purpose: "Indicado para marcas que já possuem um símbolo mas precisam melhorar a nitidez, proporção ou estética atual.",
+        deliverables: "Logotipo revitalizado em alta resolução, mantendo a essência da marca com acabamento moderno.",
+        result: "Sua marca poderá ganhar uma aparência mais atualizada sem necessariamente abandonar sua identidade original.",
+        whyHire: "Permite evoluir o visual da sua empresa sem perder o reconhecimento que você já conquistou com seus clientes."
+      },
+
+      // CATEGORIA 4 — YOUTUBE, MÚSICA E ENTRETENIMENTO
+      {
+        id: "srv-24",
+        name: "Thumbnail para YouTube",
+        category: "YouTube, Música e Entretenimento",
+        price: 20.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de imagem de capa para vídeos do YouTube, desenvolvida para apresentar o tema do conteúdo de maneira visualmente interessante.",
+        purpose: "Essencial para criadores de conteúdo que desejam aumentar a taxa de cliques (CTR) dos seus vídeos.",
+        deliverables: "Miniatura em Full HD (1280x720) com alto contraste, recorte nítido e tipografia de fácil leitura.",
+        result: "Seu vídeo terá uma miniatura mais atrativa, ajudando a despertar o interesse de quem navega pela plataforma.",
+        whyHire: "A thumbnail é o principal fator de decisão de clique no YouTube; uma capa profissional multiplica o alcance do vídeo."
+      },
+      {
+        id: "srv-25",
+        name: "Capa para Playlist",
+        category: "YouTube, Música e Entretenimento",
+        price: 20.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de capa personalizada para playlists musicais e coleções de músicas.",
+        purpose: "Ideal para curadores, DJs, produtores e artistas no Spotify, Deezer, YouTube Music e SoundCloud.",
+        deliverables: "Capa quadrada em alta resolução otimizada para plataformas de streaming.",
+        result: "Sua playlist terá uma identidade visual própria e uma apresentação mais organizada.",
+        whyHire: "Playlists com capas profissionais se destacam nas buscas e atraem mais ouvintes e seguidores."
+      },
+      {
+        id: "srv-26",
+        name: "Capa para Música",
+        category: "YouTube, Música e Entretenimento",
+        price: 25.00,
+        featured: true,
+        active: true,
+        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de arte para lançamento de singles e músicas.",
+        purpose: "Desenvolvida para artistas independentes, MCs, cantores e produtores lançarem suas faixas com visual profissional.",
+        deliverables: "Capa oficial do single em alta resolução pronta para distribuidoras digitais e divulgação social.",
+        result: "Sua música ganhará uma apresentação visual personalizada para divulgação nas redes sociais e plataformas compatíveis.",
+        whyHire: "A primeira impressão do ouvinte antes de dar o play é visual; uma capa marcante valoriza sua obra musical."
+      },
+      {
+        id: "srv-27",
+        name: "Capa para Álbum Musical",
+        category: "YouTube, Música e Entretenimento",
+        price: 35.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80",
+        description: "Desenvolvimento de capa gráfica para álbuns, EPs e projetos musicais.",
+        purpose: "Criada para projetos completos que exigem direção de arte conceitual e acabamento diferenciado.",
+        deliverables: "Arte conceitual de alta definição alinhada à estética sonora e narrativa do álbum ou EP.",
+        result: "Seu projeto musical terá uma identidade visual que ajudará a transmitir sua proposta artística.",
+        whyHire: "Traduz a identidade sonora do seu disco em uma imagem icônica que representa todo o conceito do projeto."
+      },
+      {
+        id: "srv-28",
+        name: "Capa para E-book",
+        category: "YouTube, Música e Entretenimento",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de capa para livros digitais, guias, apostilas e materiais educativos.",
+        purpose: "Perfeita para infoprodutores, autores, professores e mentores digitais.",
+        deliverables: "Capa editorial profissional em alta resolução com tipografia legível e composição temática.",
+        result: "Seu conteúdo ganhará uma apresentação visual mais profissional, valorizando a percepção do material.",
+        whyHire: "Uma capa editorial bem construída aumenta a credibilidade do autor e impulsiona o interesse pelo material."
+      },
+      {
+        id: "srv-29",
+        name: "Capa Cinematográfica",
+        category: "YouTube, Música e Entretenimento",
+        price: 40.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de arte com estética cinematográfica para filmes independentes, projetos audiovisuais, trailers e produções especiais.",
+        purpose: "Indicada para pôsteres de curtas, webséries, clipes musicais e produções audiovisuais de impacto.",
+        deliverables: "Arte com tratamento dramático de luz, atmosfera de cinema e tipografia de pôster oficial.",
+        result: "Seu projeto terá uma apresentação visual impactante, com atmosfera e composição inspiradas em materiais cinematográficos.",
+        whyHire: "Eleva o nível visual da sua produção audiovisual com estética de grande tela."
+      },
+      {
+        id: "srv-30",
+        name: "Banner para Canal",
+        category: "YouTube, Música e Entretenimento",
+        price: 30.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de banner personalizado para canais de YouTube e outras plataformas de conteúdo.",
+        purpose: "Organiza a vitrine principal do seu canal exibindo tema, dias de vídeo e identidade visual.",
+        deliverables: "Banner dimensionado com área segura para TV, computador e celular.",
+        result: "Seu canal terá uma identidade visual mais organizada e uma apresentação profissional.",
+        whyHire: "Transforma visitantes ocasionais em inscritos ao mostrar que seu canal possui estrutura profissional."
+      },
+      {
+        id: "srv-31",
+        name: "Arte para Divulgação de Lançamento",
+        category: "YouTube, Música e Entretenimento",
+        price: 25.00,
+        featured: false,
+        active: true,
+        image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80",
+        description: "Criação de arte promocional para anunciar músicas, vídeos, produtos, projetos e novidades.",
+        purpose: "Ideal para contagem regressiva, avisos de estreia ('Em Breve' / 'Já Disponível') e campanhas de lançamento.",
+        deliverables: "Arte promocional de alto impacto preparada para engajar o público no momento do lançamento.",
+        result: "Você terá uma peça visual pronta para apresentar seu lançamento e despertar o interesse do público.",
+        whyHire: "Gera antecipação e profissionaliza a comunicação de estreia do seu projeto nas redes sociais."
+      }
+    ];
+
+    const FAQ_ITEMS = [
+      { q: "Pergunta 1: Como faço para contratar um serviço?", a: "Escolha o serviço desejado no catálogo, consulte os detalhes e clique no botão de contratação. Você será direcionado ao nosso WhatsApp para concluir seu pedido." },
+      { q: "Pergunta 2: Os preços apresentados são definitivos?", a: "Os preços apresentados são valores iniciais para os serviços descritos. Projetos com necessidades especiais ou maior complexidade poderão receber orçamento personalizado." },
+      { q: "Pergunta 3: Qual é o prazo de entrega?", a: "O prazo padrão é de até 48 horas após a confirmação do pedido e o recebimento de todas as informações necessárias. Projetos maiores poderão exigir mais tempo." },
+      { q: "Pergunta 4: Posso solicitar alterações na arte?", a: "Sim. Estão incluídas até duas rodadas de ajustes simples, desde que estejam de acordo com o briefing inicial. Alterações maiores poderão ter custo adicional." },
+      { q: "Pergunta 5: Como envio as informações para criação?", a: "Após iniciar o atendimento pelo WhatsApp, você poderá enviar textos, imagens, logotipos, referências e outras informações necessárias." },
+      { q: "Pergunta 6: Posso escolher as cores e o estilo da arte?", a: "Sim. Você poderá informar suas preferências de cores, referências visuais e estilo desejado." },
+      { q: "Pergunta 7: Como receberei meu projeto?", a: "Os arquivos finais serão enviados digitalmente pelo WhatsApp, em formatos adequados ao serviço contratado." },
+      { q: "Pergunta 8: Vocês fazem impressão?", a: "Os valores apresentados neste catálogo correspondem à criação digital das artes. Serviços de impressão não estão incluídos." },
+      { q: "Pergunta 9: Posso contratar mais de um serviço?", a: "Sim. Você poderá selecionar vários serviços e solicitar um orçamento conjunto." },
+      { q: "Pergunta 10: Como funciona o pagamento?", a: "As condições de pagamento serão informadas durante o atendimento. A política padrão é de 50% antecipado e 50% na aprovação final, antes da entrega dos arquivos finais." },
+      { q: "Pergunta 11: Vocês trabalham aos domingos?", a: "Não. Nosso atendimento funciona de segunda a sábado, das 09:30 às 18:00." },
+      { q: "Pergunta 12: Posso solicitar um serviço que não aparece no catálogo?", a: "Sim. Entre em contato pelo WhatsApp, explique sua ideia e consulte a disponibilidade e o orçamento." }
+    ];
+
+    // ==================== ESTADO GLOBAL DA APLICAÇÃO ====================
+    let state = {
+      categories: [...INITIAL_CATEGORIES],
+      services: [...INITIAL_SERVICES],
+      cart: [],
+      orders: [],
+      reviews: [],      // Nenhuma avaliação fictícia pré-cadastrada!
+      suggestions: [],
+      selectedCategory: "Todos",
+      searchQuery: "",
+      attachedFiles: [],
+      isAdminAuthenticated: false
+    };
+
+    // Configuração de credenciais administrativas (armazenada via hash simples sem expor senha em texto claro na UI)
+    const DEFAULT_ADMIN_USER = "admin";
+    const DEFAULT_ADMIN_HASH = "rex2026studio";
+
+    // ==================== INICIALIZAÇÃO DO FIREBASE FIRESTORE ====================
+    let db = null;
+    let auth = null;
+    let currentUser = null;
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'rex-design-store';
+
+    async function initFirebase() {
+      try {
+        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+          const firebaseConfig = JSON.parse(__firebase_config);
+          const app = initializeApp(firebaseConfig);
+          auth = getAuth(app);
+          db = getFirestore(app);
+
+          if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+            const cred = await signInWithCustomToken(auth, __initial_auth_token);
+            currentUser = cred.user;
+          } else {
+            const cred = await signInAnonymously(auth);
+            currentUser = cred.user;
+          }
+
+          setupFirestoreListeners();
+        }
+      } catch (err) {
+        console.warn("Operando em modo de sessão ativa:", err.message);
+      }
+    }
+
+    function setupFirestoreListeners() {
+      if (!db || !currentUser) return;
+
+      // Sincroniza configurações do catálogo (serviços e categorias editados pelo Admin)
+      const catalogDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'store_config', 'catalog');
+      onSnapshot(catalogDocRef, (snap) => {
+        if (snap.exists()) {
+          const data = snap.data();
+          if (Array.isArray(data.services) && data.services.length > 0) {
+            state.services = data.services;
+          }
+          if (Array.isArray(data.categories) && data.categories.length > 0) {
+            state.categories = data.categories;
+          }
+          renderAllStoreViews();
+        } else {
+          // Inicializa documento público se ainda não existir
+          setDoc(catalogDocRef, {
+            services: state.services,
+            categories: state.categories
+          }).catch(() => {});
+        }
+      }, (err) => console.error("Erro listener catálogo:", err));
+
+      // Sincroniza avaliações (apenas aprovadas aparecem na vitrine pública)
+      const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
+      onSnapshot(reviewsCol, (snapshot) => {
+        const list = [];
+        snapshot.forEach(d => list.push({ id: d.id, ...d.data() }));
+        state.reviews = list;
+        renderApprovedReviews();
+        if (state.isAdminAuthenticated) renderAdminLists();
+      }, (err) => console.error("Erro listener avaliações:", err));
+
+      // Sincroniza sugestões
+      const suggestionsCol = collection(db, 'artifacts', appId, 'public', 'data', 'suggestions');
+      onSnapshot(suggestionsCol, (snapshot) => {
+        const list = [];
+        snapshot.forEach(d => list.push({ id: d.id, ...d.data() }));
+        state.suggestions = list;
+        if (state.isAdminAuthenticated) renderAdminLists();
+      }, (err) => console.error("Erro listener sugestões:", err));
+
+      // Sincroniza solicitações de pedidos
+      const ordersCol = collection(db, 'artifacts', appId, 'public', 'data', 'orders');
+      onSnapshot(ordersCol, (snapshot) => {
+        const list = [];
+        snapshot.forEach(d => list.push({ id: d.id, ...d.data() }));
+        state.orders = list;
+        if (state.isAdminAuthenticated) renderAdminLists();
+      }, (err) => console.error("Erro listener pedidos:", err));
+    }
+
+    async function persistCatalogToCloud() {
+      if (!db || !currentUser) return;
+      try {
+        const catalogDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'store_config', 'catalog');
+        await setDoc(catalogDocRef, {
+          services: state.services,
+          categories: state.categories,
+          updatedAt: new Date().toISOString()
+        });
+      } catch (err) {
+        console.error("Erro ao salvar catálogo:", err);
+      }
+    }
+
+    // ==================== UTILITÁRIOS DE UI ====================
+    function formatCurrency(val) {
+      return Number(val).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const borderClass = type === 'error' ? 'border-rex-red' : 'border-rex-orange';
+      const iconHtml = type === 'error'
+        ? '<i class="fa-solid fa-circle-exclamation text-rex-red"></i>'
+        : '<i class="fa-solid fa-circle-check text-rex-gold"></i>';
+
+      toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3.5 rounded-xl bg-[#141414]/95 backdrop-blur-md border ${borderClass} text-white text-xs sm:text-sm shadow-2xl transform transition-all duration-300`;
+      toast.innerHTML = `${iconHtml}<span class="flex-1">${message}</span>`;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-x-4');
+        setTimeout(() => toast.remove(), 300);
+      }, 3600);
+    }
+
+    // ==================== RENDERIZAÇÃO DO CATÁLOGO & DESTAQUES ====================
+    function renderAllStoreViews() {
+      renderCategoryFilters();
+      renderFeaturedServices();
+      renderCatalogGrid();
+      populateReviewServiceSelect();
+      renderApprovedReviews();
+      if (state.isAdminAuthenticated) renderAdminLists();
+    }
+
+    function renderCategoryFilters() {
+      const container = document.getElementById('category-filters');
+      const allTabs = ["Todos", ...state.categories];
+      container.innerHTML = allTabs.map(cat => {
+        const isActive = state.selectedCategory === cat;
+        const btnStyle = isActive
+          ? "btn-rex-primary text-white"
+          : "bg-[#080808] hover:bg-[#1e1e1e] text-gray-300 border border-white/10";
+        return `
+          <button onclick="selectCategory('${cat.replace(/'/g, "\\'")}')" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all ${btnStyle}">
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function createServiceCardHTML(srv) {
+      return `
+        <article class="neon-border-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+          <div>
+            <!-- Imagem Mockup -->
+            <div class="relative h-48 overflow-hidden bg-[#0a0a0a]">
+              <img src="${srv.image}" alt="${srv.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/191919/FF6A00?text=${encodeURIComponent(srv.name)}'" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/30"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-[#080808]/85 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-rex-orange">
+                ${srv.category}
+              </span>
+            </div>
+
+            <!-- Conteúdo do Card -->
+            <div class="p-5">
+              <h3 class="font-bold text-lg text-white group-hover:text-rex-gold transition-colors line-clamp-1">${srv.name}</h3>
+              <p class="text-xs sm:text-sm text-gray-400 mt-2 line-clamp-2 leading-relaxed">
+                ${srv.description}
+              </p>
+            </div>
+          </div>
+
+          <!-- Preço e Botões -->
+          <div class="px-5 pb-5 pt-2 space-y-3">
+            <div class="flex items-baseline justify-between pt-3 border-t border-white/10">
+              <span class="text-[11px] font-mono uppercase text-gray-400">Investimento</span>
+              <span class="font-mono font-bold text-xl text-rex-gold">${formatCurrency(srv.price)}</span>
+            </div>
+
+            <div class="grid grid-cols-12 gap-2">
+              <button onclick="openServiceDetail('${srv.id}')" class="col-span-8 py-2.5 px-3 rounded-xl btn-rex-primary text-xs uppercase tracking-wider text-center">
+                VER DETALHES
+              </button>
+              <button onclick="addToCart('${srv.id}')" title="Adicionar ao pedido" class="col-span-4 py-2.5 px-3 rounded-xl bg-[#080808] hover:bg-rex-orange/20 border border-rex-orange/40 text-rex-orange hover:text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderFeaturedServices() {
+      const container = document.getElementById('featured-services-grid');
+      const featured = state.services.filter(s => s.active !== false && s.featured).slice(0, 4);
+      container.innerHTML = featured.map(createServiceCardHTML).join('');
+    }
+
+    function renderCatalogGrid() {
+      const grid = document.getElementById('catalog-grid');
+      const emptyBox = document.getElementById('catalog-empty');
+      const countEl = document.getElementById('catalog-count');
+
+      const filtered = state.services.filter(srv => {
+        if (srv.active === false) return false;
+        const matchCat = state.selectedCategory === "Todos" || srv.category === state.selectedCategory;
+        const q = state.searchQuery.toLowerCase().trim();
+        const matchQuery = !q ||
+          srv.name.toLowerCase().includes(q) ||
+          srv.description.toLowerCase().includes(q) ||
+          srv.category.toLowerCase().includes(q);
+        return matchCat && matchQuery;
+      });
+
+      countEl.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = "";
+        emptyBox.classList.remove('hidden');
+      } else {
+        emptyBox.classList.add('hidden');
+        grid.innerHTML = filtered.map(createServiceCardHTML).join('');
+      }
+    }
+
+    window.selectCategory = function(category) {
+      state.selectedCategory = category;
+      renderCategoryFilters();
+      renderCatalogGrid();
+    };
+
+    window.filterCatalog = function() {
+      state.searchQuery = document.getElementById('catalog-search').value;
+      renderCatalogGrid();
+    };
+
+    window.resetCatalogFilters = function() {
+      state.selectedCategory = "Todos";
+      state.searchQuery = "";
+      document.getElementById('catalog-search').value = "";
+      renderCategoryFilters();
+      renderCatalogGrid();
+    };
+
+    // ==================== PÁGINA INDIVIDUAL DO SERVIÇO ====================
+    window.openServiceDetail = function(serviceId) {
+      const srv = state.services.find(s => s.id === serviceId);
+      if (!srv) return;
+
+      document.getElementById('main-store-view').classList.add('hidden');
+      document.getElementById('admin-view').classList.add('hidden');
+      const detailView = document.getElementById('service-detail-view');
+      detailView.classList.remove('hidden');
+
+      const content = document.getElementById('service-detail-content');
+      content.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <!-- Imagem Demonstrativa em Alta Definição -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="rounded-3xl p-1 bg-gradient-to-br from-rex-red via-rex-orange to-rex-gold/40 shadow-neon-dual">
+              <div class="rounded-[22px] overflow-hidden bg-[#0c0c0c]">
+                <img src="${srv.image}" alt="${srv.name}" class="w-full h-[320px] sm:h-[400px] object-cover" onerror="this.src='https://placehold.co/800x600/191919/FF6A00?text=${encodeURIComponent(srv.name)}'" />
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#121212] border border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-clock text-rex-orange text-xl"></i>
+                <div>
+                  <span class="block text-[11px] font-mono uppercase text-gray-400">Prazo Estimado</span>
+                  <span class="text-sm font-bold text-white">Até 48 horas úteis</span>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
+                Disponível
+              </span>
+            </div>
+          </div>
+
+          <!-- Informações Detalhadas -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-lg bg-rex-orange/15 border border-rex-orange/40 text-rex-orange font-mono text-xs uppercase tracking-wider mb-3">
+                ${srv.category}
+              </span>
+              <h1 class="font-luxury font-black text-3xl sm:text-4xl text-white">${srv.name}</h1>
+              <div class="mt-4 flex items-baseline gap-3">
+                <span class="font-mono font-bold text-3xl sm:text-4xl text-rex-gold">${formatCurrency(srv.price)}</span>
+                <span class="text-xs text-gray-400">(Criação digital personalizada)</span>
+              </div>
+            </div>
+
+            <!-- Blocos de Explicação Específica -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-5 rounded-2xl bg-[#121212] border border-white/10">
+                <h3 class="text-xs font-mono uppercase tracking-wider text-rex-orange mb-2">
+                  <i class="fa-solid fa-circle-info mr-1.5"></i> O que é este serviço
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">${srv.description}</p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-[#121212] border border-white/10">
+                <h3 class="text-xs font-mono uppercase tracking-wider text-rex-orange mb-2">
+                  <i class="fa-solid fa-bullseye mr-1.5"></i> Para que serve
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">${srv.purpose || srv.description}</p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-[#121212] border border-white/10">
+                <h3 class="text-xs font-mono uppercase tracking-wider text-rex-gold mb-2">
+                  <i class="fa-solid fa-box-open mr-1.5"></i> O que você receberá
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">${srv.deliverables || "Arquivo digital finalizado em alta resolução enviado diretamente pelo WhatsApp."}</p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-[#121212] border border-white/10">
+                <h3 class="text-xs font-mono uppercase tracking-wider text-emerald-400 mb-2">
+                  <i class="fa-solid fa-chart-line mr-1.5"></i> Benefícios e Resultado
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">${srv.result}</p>
+              </div>
+            </div>
+
+            <!-- Seção Destacada: POR QUE CONTRATAR ESTE SERVIÇO? -->
+            <div class="p-6 rounded-2xl bg-gradient-to-r from-[#191919] to-[#111111] border-l-4 border-rex-red shadow-lg">
+              <h3 class="font-luxury font-bold text-lg text-white mb-2">POR QUE CONTRATAR ESTE SERVIÇO?</h3>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                ${srv.whyHire || srv.result}
+              </p>
+            </div>
+
+            <!-- Botões de Contratação -->
+            <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+              <button onclick="contractServiceNow('${srv.id}')" class="flex-1 py-4 px-6 rounded-xl btn-rex-primary text-sm uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-neon-dual">
+                <i class="fa-solid fa-check-circle text-lg"></i>
+                CONTRATAR ESTE SERVIÇO
+              </button>
+              <button onclick="addToCart('${srv.id}')" class="py-4 px-6 rounded-xl btn-rex-outline text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+                <i class="fa-solid fa-cart-plus text-rex-orange"></i>
+                Adicionar à Lista
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Renderizar "VOCÊ TAMBÉM PODE SE INTERESSAR"
+      const related = state.services
+        .filter(s => s.active !== false && s.id !== srv.id && s.category === srv.category)
+        .slice(0, 3);
+      document.getElementById('related-services-grid').innerHTML = related.map(createServiceCardHTML).join('');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.navigateToHome = function(sectionId = null) {
+      document.getElementById('service-detail-view').classList.add('hidden');
+      document.getElementById('admin-view').classList.add('hidden');
+      document.getElementById('main-store-view').classList.remove('hidden');
+
+      if (sectionId) {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    // ==================== CARRINHO / LISTA DE PEDIDOS & WHATSAPP ====================
+    window.addToCart = function(serviceId) {
+      const srv = state.services.find(s => s.id === serviceId);
+      if (!srv) return;
+
+      const existing = state.cart.find(item => item.id === serviceId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        state.cart.push({ id: srv.id, name: srv.name, price: srv.price, category: srv.category, qty: 1 });
+      }
+
+      updateCartUI();
+      showToast(`"${srv.name}" adicionado ao seu pedido!`);
+    };
+
+    window.contractServiceNow = function(serviceId) {
+      const existing = state.cart.find(item => item.id === serviceId);
+      if (!existing) {
+        addToCart(serviceId);
+      }
+      openCartDrawer();
+    };
+
+    window.removeFromCart = function(serviceId) {
+      state.cart = state.cart.filter(item => item.id !== serviceId);
+      updateCartUI();
+    };
+
+    window.changeCartQty = function(serviceId, delta) {
+      const item = state.cart.find(i => i.id === serviceId);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        removeFromCart(serviceId);
+      } else {
+        updateCartUI();
+      }
+    };
+
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge');
+      const listEl = document.getElementById('cart-items-list');
+      const subtotalEl = document.getElementById('cart-subtotal');
+
+      const totalCount = state.cart.reduce((acc, item) => acc + item.qty, 0);
+      const subtotal = state.cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+      badge.textContent = totalCount;
+      subtotalEl.textContent = formatCurrency(subtotal);
+
+      if (state.cart.length === 0) {
+        listEl.innerHTML = `
+          <div class="p-6 rounded-xl bg-[#080808] border border-white/10 text-center">
+            <p class="text-sm text-gray-400">Sua lista de pedidos está vazia.</p>
+            <p class="text-xs text-gray-500 mt-1">Adicione serviços do catálogo ou preencha o formulário abaixo para solicitar um orçamento personalizado.</p>
+          </div>
+        `;
+      } else {
+        listEl.innerHTML = state.cart.map(item => `
+          <div class="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-[#080808] border border-white/10">
+            <div class="min-w-0 flex-1">
+              <h5 class="text-sm font-bold text-white truncate">${item.name}</h5>
+              <span class="text-xs font-mono text-rex-gold">${formatCurrency(item.price)} un.</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="changeCartQty('${item.id}', -1)" class="w-7 h-7 rounded-lg bg-rex-graphite text-white text-xs hover:bg-rex-red/30">-</button>
+              <span class="font-mono text-xs font-bold w-5 text-center">${item.qty}</span>
+              <button type="button" onclick="changeCartQty('${item.id}', 1)" class="w-7 h-7 rounded-lg bg-rex-graphite text-white text-xs hover:bg-rex-orange/30">+</button>
+              <button type="button" onclick="removeFromCart('${item.id}')" class="ml-1 text-gray-500 hover:text-rex-red text-xs" title="Remover">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    window.openCartDrawer = function() {
+      updateCartUI();
+      document.getElementById('cart-drawer').classList.remove('hidden');
+    };
+
+    window.closeCartDrawer = function() {
+      document.getElementById('cart-drawer').classList.add('hidden');
+    };
+
+    window.handleOrderFiles = function(event) {
+      const files = Array.from(event.target.files || []);
+      const preview = document.getElementById('order-files-preview');
+      const maxBytes = 5 * 1024 * 1024;
+      const validFiles = [];
+
+      files.forEach(file => {
+        if (file.size > maxBytes) {
+          showToast(`O arquivo "${file.name}" excede 5MB e foi ignorado.`, 'error');
+        } else {
+          validFiles.push(file.name);
+        }
+      });
+
+      state.attachedFiles = validFiles;
+      preview.innerHTML = validFiles.map(name => `
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#151515] border border-white/10 text-xs text-gray-300">
+          <i class="fa-solid fa-paperclip text-rex-orange"></i>
+          <span class="truncate">${name}</span>
+        </div>
+      `).join('');
+    };
+
+    window.finalizeOrderWhatsApp = async function(event) {
+      event.preventDefault();
+
+      const clientName = document.getElementById('order-name').value.trim();
+      const clientPhone = document.getElementById('order-phone').value.trim();
+      const desc = document.getElementById('order-desc').value.trim();
+      const deadline = document.getElementById('order-deadline').value;
+      const style = document.getElementById('order-style').value.trim();
+
+      const servicesText = state.cart.length > 0
+        ? state.cart.map(i => `${i.name} (${i.qty}x - ${formatCurrency(i.price * i.qty)})`).join(', ')
+        : "Orçamento Personalizado (Consultar catálogo)";
+
+      const totalValue = state.cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+      const priceText = state.cart.length > 0 ? formatCurrency(totalValue) : "A combinar";
+
+      let fullDescription = desc;
+      if (style) fullDescription += ` | Estilo/Cores: ${style}`;
+      if (state.attachedFiles.length > 0) {
+        fullDescription += ` | Arquivos de referência prontos para envio no chat: ${state.attachedFiles.join(', ')}`;
+      }
+
+      // Salva registro da solicitação para consulta no Painel Administrativo
+      const orderRecord = {
+        clientName,
+        clientPhone,
+        services: servicesText,
+        total: priceText,
+        description: fullDescription,
+        deadline,
+        createdAt: new Date().toLocaleString('pt-BR')
+      };
+
+      state.orders.unshift(orderRecord);
+      if (db && currentUser) {
+        addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'orders'), orderRecord).catch(() => {});
+      }
+
+      // Monta mensagem oficial obrigatória para WhatsApp
+      const whatsappMessage =
+`Olá! Vim pelo site da REX DESIGN e gostaria de solicitar um orçamento.
+
+Nome: ${clientName}
+Serviço escolhido: ${servicesText}
+Preço: ${priceText}
+Descrição do projeto: ${fullDescription}
+Prazo desejado: ${deadline}
+
+Aguardo atendimento. Obrigado!`;
+
+      const whatsappUrl = `https://wa.me/5521966632766?text=${encodeURIComponent(whatsappMessage)}`;
+
+      showToast("Pedido registrado! Abrindo WhatsApp oficial da REX DESIGN...");
+      window.open(whatsappUrl, '_blank', 'noopener');
+    };
+
+    // ==================== FAQ INTERATIVO ====================
+    function renderFAQ() {
+      const container = document.getElementById('faq-container');
+      container.innerHTML = FAQ_ITEMS.map((item, idx) => `
+        <div class="faq-item rounded-2xl bg-[#121212] border border-white/10 overflow-hidden transition-colors hover:border-rex-orange/40">
+          <button type="button" onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4">
+            <span class="font-semibold text-sm sm:text-base text-white">${item.q}</span>
+            <i class="fa-solid fa-chevron-down faq-icon text-gray-400 transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-answer px-6 text-sm text-gray-300 leading-relaxed">
+            <div class="pb-5 pt-1 border-t border-white/5">
+              ${item.a}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.toggleFAQ = function(buttonEl) {
+      const parent = buttonEl.closest('.faq-item');
+      parent.classList.toggle('open');
+    };
+
+    // ==================== AVALIAÇÕES & SUGESTÕES ====================
+    function populateReviewServiceSelect() {
+      const select = document.getElementById('rev-service');
+      if (!select) return;
+      select.innerHTML = state.services
+        .filter(s => s.active !== false)
+        .map(s => `<option value="${s.name}">${s.name}</option>`)
+        .join('');
+    }
+
+    window.setRating = function(stars) {
+      document.getElementById('rev-rating').value = stars;
+      document.getElementById('rating-label').textContent = `${stars} de 5 estrelas`;
+      document.querySelectorAll('.star-btn').forEach(btn => {
+        const val = Number(btn.getAttribute('data-star'));
+        btn.className = val <= stars
+          ? "star-btn text-2xl text-rex-gold transition-transform hover:scale-110"
+          : "star-btn text-2xl text-gray-600 transition-transform hover:scale-110";
+      });
+    };
+
+    window.submitReview = async function(event) {
+      event.preventDefault();
+      const name = document.getElementById('rev-name').value.trim();
+      const service = document.getElementById('rev-service').value;
+      const rating = Number(document.getElementById('rev-rating').value);
+      const comment = document.getElementById('rev-comment').value.trim();
+      const consent = document.getElementById('rev-consent').checked;
+
+      if (!consent) {
+        showToast("Por favor, autorize a publicação do depoimento.", "error");
+        return;
+      }
+
+      const newReview = {
+        id: "rev-" + Date.now(),
+        name,
+        service,
+        rating,
+        comment,
+        status: "pending", // Exige aprovação administrativa antes de ser exibida!
+        createdAt: new Date().toLocaleDateString('pt-BR')
+      };
+
+      state.reviews.unshift(newReview);
+      if (db && currentUser) {
+        await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'reviews'), newReview).catch(() => {});
+      }
+
+      document.getElementById('review-form').reset();
+      setRating(5);
+      showToast("Avaliação enviada com sucesso! Ela será publicada após moderação da equipe REX DESIGN.");
+    };
+
+    function renderApprovedReviews() {
+      const container = document.getElementById('approved-reviews-container');
+      const approved = state.reviews.filter(r => r.status === 'approved');
+
+      if (approved.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 rounded-3xl bg-[#111111] border border-white/10 text-center max-w-2xl mx-auto">
+            <div class="w-12 h-12 rounded-full bg-rex-gold/10 border border-rex-gold/30 text-rex-gold flex items-center justify-center mx-auto mb-3">
+              <i class="fa-regular fa-comments text-xl"></i>
+            </div>
+            <p class="text-sm sm:text-base text-gray-300 font-medium">
+              Ainda não há avaliações publicadas. Seja o primeiro cliente a compartilhar sua experiência com a REX DESIGN!
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          ${approved.map(rev => `
+            <div class="neon-border-card rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex text-rex-gold text-sm gap-1">
+                    ${Array.from({ length: 5 }, (_, i) => `<i class="fa-${i < rev.rating ? 'solid' : 'regular'} fa-star"></i>`).join('')}
+                  </div>
+                  <span class="text-[11px] font-mono text-gray-500">${rev.createdAt || ''}</span>
+                </div>
+                <p class="text-sm text-gray-200 italic leading-relaxed mb-4">"${rev.comment}"</p>
+              </div>
+              <div class="pt-3 border-t border-white/10">
+                <p class="font-bold text-sm text-white">${rev.name}</p>
+                <span class="text-xs text-rex-orange">Serviço: ${rev.service}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    window.submitSuggestion = async function(event) {
+      event.preventDefault();
+      const name = document.getElementById('sug-name').value.trim() || "Visitante";
+      const message = document.getElementById('sug-message').value.trim();
+
+      const suggestion = {
+        id: "sug-" + Date.now(),
+        name,
+        message,
+        createdAt: new Date().toLocaleString('pt-BR')
+      };
+
+      state.suggestions.unshift(suggestion);
+      if (db && currentUser) {
+        await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'suggestions'), suggestion).catch(() => {});
+      }
+
+      document.getElementById('suggestion-form').reset();
+      showToast("Sugestão enviada! Obrigado por contribuir com a REX DESIGN.");
+    };
+
+    // ==================== ÁREA ADMINISTRATIVA PROTEGIDA ====================
+    let adminCreds = {
+      user: DEFAULT_ADMIN_USER,
+      pass: DEFAULT_ADMIN_HASH
+    };
+
+    window.openAdminPanel = function() {
+      document.getElementById('main-store-view').classList.add('hidden');
+      document.getElementById('service-detail-view').classList.add('hidden');
+      document.getElementById('admin-view').classList.remove('hidden');
+
+      if (state.isAdminAuthenticated) {
+        document.getElementById('admin-login-box').classList.add('hidden');
+        document.getElementById('admin-dashboard-box').classList.remove('hidden');
+        renderAdminLists();
+      } else {
+        document.getElementById('admin-login-box').classList.remove('hidden');
+        document.getElementById('admin-dashboard-box').classList.add('hidden');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.handleAdminLogin = function(event) {
+      event.preventDefault();
+      const u = document.getElementById('admin-user-input').value.trim();
+      const p = document.getElementById('admin-pass-input').value;
+      const errEl = document.getElementById('admin-login-error');
+
+      if (u === adminCreds.user && p === adminCreds.pass) {
+        state.isAdminAuthenticated = true;
+        errEl.classList.add('hidden');
+        document.getElementById('admin-login-box').classList.add('hidden');
+        document.getElementById('admin-dashboard-box').classList.remove('hidden');
+        renderAdminLists();
+        showToast("Autenticado no painel administrativo REX DESIGN.");
+      } else {
+        errEl.textContent = "Credenciais inválidas. Verifique o usuário e a chave de acesso.";
+        errEl.classList.remove('hidden');
+      }
+    };
+
+    window.logoutAdmin = function() {
+      state.isAdminAuthenticated = false;
+      document.getElementById('admin-user-input').value = "";
+      document.getElementById('admin-pass-input').value = "";
+      navigateToHome();
+      showToast("Sessão administrativa encerrada.");
+    };
+
+    window.updateAdminCredentials = function(event) {
+      event.preventDefault();
+      const newUser = document.getElementById('sec-new-user').value.trim();
+      const newPass = document.getElementById('sec-new-pass').value;
+      if (newUser && newPass.length >= 6) {
+        adminCreds.user = newUser;
+        adminCreds.pass = newPass;
+        showToast("Credenciais administrativas atualizadas com sucesso!");
+        event.target.reset();
+      }
+    };
+
+    window.switchAdminTab = function(tabName) {
+      document.querySelectorAll('.admin-tab-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(`admin-tab-${tabName}`).classList.remove('hidden');
+
+      document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+        btn.className = "admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase bg-rex-graphite text-gray-300";
+      });
+      document.getElementById(`tab-btn-${tabName}`).className = "admin-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase btn-rex-primary";
+    };
+
+    function renderAdminLists() {
+      // Contadores
+      document.getElementById('admin-orders-count').textContent = state.orders.length;
+      document.getElementById('admin-reviews-count').textContent = state.reviews.length;
+      document.getElementById('admin-suggestions-count').textContent = state.suggestions.length;
+
+      // 1. Serviços
+      const srvList = document.getElementById('admin-services-list');
+      srvList.innerHTML = state.services.map(srv => `
+        <div class="p-4 rounded-2xl bg-[#121212] border ${srv.active !== false ? 'border-white/10' : 'border-rex-red/40 opacity-60'} flex flex-col justify-between gap-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <span class="text-[10px] font-mono uppercase text-rex-orange">${srv.category}</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded ${srv.active !== false ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rex-red/20 text-rex-red'}">
+                ${srv.active !== false ? 'Ativo' : 'Oculto'}
+              </span>
+            </div>
+            <h4 class="font-bold text-white text-sm">${srv.name}</h4>
+            <p class="font-mono text-rex-gold font-bold text-base mt-1">${formatCurrency(srv.price)}</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-white/10">
+            <button onclick="openServiceEditorModal('${srv.id}')" class="px-3 py-1.5 rounded-lg bg-rex-graphite hover:bg-rex-orange/20 text-xs text-white">
+              <i class="fa-solid fa-pen mr-1"></i> Editar
+            </button>
+            <button onclick="toggleServiceStatus('${srv.id}')" class="px-3 py-1.5 rounded-lg bg-rex-graphite hover:bg-white/10 text-xs text-gray-300">
+              ${srv.active !== false ? 'Desativar' : 'Ativar'}
+            </button>
+            <button onclick="deleteService('${srv.id}')" class="px-3 py-1.5 rounded-lg bg-rex-red/15 hover:bg-rex-red/30 text-xs text-rex-red">
+              Excluir
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      // 2. Categorias
+      const catList = document.getElementById('admin-categories-list');
+      catList.innerHTML = state.categories.map(cat => `
+        <div class="p-4 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-between">
+          <span class="text-sm font-semibold text-white">${cat}</span>
+          <button onclick="deleteCategory('${cat.replace(/'/g, "\\'")}')" class="text-xs text-rex-red hover:underline">Excluir</button>
+        </div>
+      `).join('');
+
+      // 3. Solicitações de Pedidos
+      const ordList = document.getElementById('admin-orders-list');
+      ordList.innerHTML = state.orders.length === 0
+        ? `<p class="text-sm text-gray-400">Nenhuma solicitação recebida ainda.</p>`
+        : state.orders.map(o => `
+          <div class="p-5 rounded-2xl bg-[#121212] border border-white/10 space-y-2">
+            <div class="flex flex-wrap justify-between gap-2">
+              <span class="font-bold text-white">${o.clientName} — <span class="font-mono text-rex-orange">${o.clientPhone}</span></span>
+              <span class="text-xs font-mono text-gray-400">${o.createdAt}</span>
+            </div>
+            <p class="text-xs text-rex-gold font-mono">Serviços: ${o.services} | Total: ${o.total}</p>
+            <p class="text-sm text-gray-300">${o.description}</p>
+            <p class="text-xs text-gray-400">Prazo desejado: ${o.deadline}</p>
+          </div>
+        `).join('');
+
+      // 4. Moderação de Avaliações
+      const revList = document.getElementById('admin-reviews-list');
+      revList.innerHTML = state.reviews.length === 0
+        ? `<p class="text-sm text-gray-400">Nenhuma avaliação enviada pelos clientes até o momento.</p>`
+        : state.reviews.map(r => `
+          <div class="p-5 rounded-2xl bg-[#121212] border border-white/10 flex flex-col sm:flex-row justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-white">${r.name}</span>
+                <span class="text-xs text-rex-gold font-mono">${r.rating} ★</span>
+                <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded ${r.status === 'approved' ? 'bg-emerald-500/20 text-emerald-400' : r.status === 'rejected' ? 'bg-rex-red/20 text-rex-red' : 'bg-rex-gold/20 text-rex-gold'}">
+                  ${r.status === 'approved' ? 'Aprovada' : r.status === 'rejected' ? 'Rejeitada' : 'Pendente'}
+                </span>
+              </div>
+              <p class="text-xs text-rex-orange">Serviço: ${r.service}</p>
+              <p class="text-sm text-gray-300">"${r.comment}"</p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="moderateReview('${r.id}', 'approved')" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold">
+                Aprovar
+              </button>
+              <button onclick="moderateReview('${r.id}', 'rejected')" class="px-3.5 py-2 rounded-xl bg-rex-red/20 hover:bg-rex-red/40 text-rex-red text-xs font-bold">
+                Rejeitar / Ocultar
+              </button>
+            </div>
+          </div>
+        `).join('');
+
+      // 5. Sugestões
+      const sugList = document.getElementById('admin-suggestions-list');
+      sugList.innerHTML = state.suggestions.length === 0
+        ? `<p class="text-sm text-gray-400">Nenhuma sugestão enviada ainda.</p>`
+        : state.suggestions.map(s => `
+          <div class="p-5 rounded-2xl bg-[#121212] border border-white/10">
+            <div class="flex justify-between text-xs text-gray-400 mb-1">
+              <strong class="text-white">${s.name}</strong>
+              <span class="font-mono">${s.createdAt}</span>
+            </div>
+            <p class="text-sm text-gray-300">${s.message}</p>
+          </div>
+        `).join('');
+    }
+
+    // CRUD Serviços e Categorias
+    window.openServiceEditorModal = function(serviceId = null) {
+      const modal = document.getElementById('service-editor-modal');
+      const catSelect = document.getElementById('edit-srv-category');
+      catSelect.innerHTML = state.categories.map(c => `<option value="${c}">${c}</option>`).join('');
+
+      if (serviceId) {
+        const srv = state.services.find(s => s.id === serviceId);
+        document.getElementById('editor-modal-title').textContent = "EDITAR SERVIÇO";
+        document.getElementById('edit-srv-id').value = srv.id;
+        document.getElementById('edit-srv-name').value = srv.name;
+        document.getElementById('edit-srv-price').value = srv.price;
+        document.getElementById('edit-srv-category').value = srv.category;
+        document.getElementById('edit-srv-image').value = srv.image || "";
+        document.getElementById('edit-srv-desc').value = srv.description;
+        document.getElementById('edit-srv-result').value = srv.result;
+        document.getElementById('edit-srv-why').value = srv.whyHire || srv.result;
+      } else {
+        document.getElementById('editor-modal-title').textContent = "CADASTRAR NOVO SERVIÇO";
+        document.getElementById('edit-srv-id').value = "";
+        document.getElementById('edit-srv-name').value = "";
+        document.getElementById('edit-srv-price').value = "";
+        document.getElementById('edit-srv-image').value = "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80";
+        document.getElementById('edit-srv-desc').value = "";
+        document.getElementById('edit-srv-result').value = "";
+        document.getElementById('edit-srv-why').value = "";
+      }
+
+      modal.classList.remove('hidden');
+    };
+
+    window.closeServiceEditorModal = function() {
+      document.getElementById('service-editor-modal').classList.add('hidden');
+    };
+
+    window.saveServiceForm = async function(event) {
+      event.preventDefault();
+      const id = document.getElementById('edit-srv-id').value;
+      const payload = {
+        name: document.getElementById('edit-srv-name').value.trim(),
+        price: parseFloat(document.getElementById('edit-srv-price').value),
+        category: document.getElementById('edit-srv-category').value,
+        image: document.getElementById('edit-srv-image').value.trim() || "https://placehold.co/800x600/191919/FF6A00?text=REX+DESIGN",
+        description: document.getElementById('edit-srv-desc').value.trim(),
+        result: document.getElementById('edit-srv-result').value.trim(),
+        whyHire: document.getElementById('edit-srv-why').value.trim(),
+        active: true
+      };
+
+      if (id) {
+        const idx = state.services.findIndex(s => s.id === id);
+        if (idx !== -1) {
+          state.services[idx] = { ...state.services[idx], ...payload };
+        }
+        showToast("Serviço atualizado com sucesso!");
+      } else {
+        state.services.push({
+          id: "srv-" + Date.now(),
+          featured: false,
+          ...payload
+        });
+        showToast("Novo serviço cadastrado no catálogo!");
+      }
+
+      closeServiceEditorModal();
+      renderAllStoreViews();
+      await persistCatalogToCloud();
+    };
+
+    window.toggleServiceStatus = async function(serviceId) {
+      const srv = state.services.find(s => s.id === serviceId);
+      if (srv) {
+        srv.active = srv.active === false ? true : false;
+        renderAllStoreViews();
+        await persistCatalogToCloud();
+        showToast(`Serviço ${srv.active ? 'ativado' : 'ocultado'} no catálogo.`);
+      }
+    };
+
+    window.deleteService = async function(serviceId) {
+      state.services = state.services.filter(s => s.id !== serviceId);
+      renderAllStoreViews();
+      await persistCatalogToCloud();
+      showToast("Serviço removido do catálogo.");
+    };
+
+    window.addNewCategory = async function(event) {
+      event.preventDefault();
+      const name = document.getElementById('new-category-name').value.trim();
+      if (name && !state.categories.includes(name)) {
+        state.categories.push(name);
+        document.getElementById('new-category-name').value = "";
+        renderAllStoreViews();
+        await persistCatalogToCloud();
+        showToast("Categoria criada com sucesso!");
+      }
+    };
+
+    window.deleteCategory = async function(catName) {
+      state.categories = state.categories.filter(c => c !== catName);
+      renderAllStoreViews();
+      await persistCatalogToCloud();
+      showToast("Categoria removida.");
+    };
+
+    window.moderateReview = async function(reviewId, newStatus) {
+      const rev = state.reviews.find(r => r.id === reviewId);
+      if (rev) {
+        rev.status = newStatus;
+        renderApprovedReviews();
+        renderAdminLists();
+        if (db && currentUser && !reviewId.startsWith('rev-')) {
+          updateDoc(doc(db, 'artifacts', appId, 'public', 'data', 'reviews', reviewId), { status: newStatus }).catch(() => {});
+        }
+        showToast(newStatus === 'approved' ? "Avaliação aprovada e publicada!" : "Avaliação ocultada.");
+      }
+    };
+
+    window.toggleMobileMenu = function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    };
+
+    // ==================== BOOTSTRAP DA APLICAÇÃO ====================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderFAQ();
+      renderAllStoreViews();
+      updateCartUI();
+      initFirebase();
+    });
+  </script>
+</body>
+</html>
+```
